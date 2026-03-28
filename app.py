@@ -1,17 +1,17 @@
 import streamlit as st
 
 # 1. Page Configuration
-st.set_page_config(page_title="Professional Portfolio", page_icon="💼", layout="wide")
+st.set_page_config(page_title="Nishant Ray | Portfolio", page_icon="💼", layout="wide")
 
-# 2. Advanced Styling (Fixing the previous error)
+# 2. Advanced Styling
 st.markdown("""
     <style>
     /* Main background */
     .stApp {
         background-color: #f8f9fa;
     }
-    /* Customizing the Profile Image */
-    .profile-img {
+    /* Customizing the Profile Image to be circular */
+    [data-testid="stImage"] img {
         border-radius: 50%;
         border: 4px solid #0077b5;
     }
@@ -24,22 +24,23 @@ st.markdown("""
         line-height: 1.6;
     }
     </style>
-    """, unsafe_allow_html=True) # Fixed parameter name here
+    """, unsafe_allow_html=True)
 
 # --- HERO SECTION ---
 col1, col2 = st.columns([1, 2], gap="large")
 
 with col1:
-    # Use a real image path or a URL
-    st.image("https://via.placeholder.com/250", width=250) 
+    # UPDATED: Using your uploaded profile pic
+    # Note: Ensure the file extension is correct (e.g., .jpg, .png)
+    st.image("profile_pic.png", width=250) 
 
 with col2:
     st.title("Hi, I'm Nishant Ray 👋")
     st.subheader("Team Lead - Product | Data Enthusiast | Problem Solver")
-    st.write("📍 Located in [Gurugram, India]")
+    st.write("📍 Located in Gurugram, India")
     
-    # LinkedIn Link
-    st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yourprofile)")
+    # UPDATED: Your specific LinkedIn Link
+    st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishant-ray-08222810a/)")
 
 # --- ABOUT ME ---
 st.write("---")
@@ -47,8 +48,8 @@ st.header("📌 About Me")
 st.write("""
 <div class="main-text">
 I am a driven professional with a background in <b>Python Development</b> and <b>Automation</b>. 
-I specialize in creating clean, efficient code that helps businesses scale and automate 
-repetitive tasks. When I'm not coding, you'll find me exploring new tech or contributing to open-source.
+As a Team Lead, I specialize in bridging the gap between product vision and technical execution, 
+creating clean, efficient code that helps businesses scale and automate repetitive tasks.
 </div>
 """, unsafe_allow_html=True)
 
@@ -58,31 +59,29 @@ col_left, col_right = st.columns(2)
 
 with col_left:
     st.header("🛠️ Technical Skills")
-    # Using columns inside columns for a clean grid
     skill_col1, skill_col2 = st.columns(2)
     with skill_col1:
         st.write("- **Languages:** Python, SQL, C++")
         st.write("- **Frameworks:** Streamlit, Flask, Django")
     with skill_col2:
         st.write("- **Cloud:** AWS, Docker, Git")
-        st.write("- **Data:** Pandas, NumPy, Matplotlib")
+        st.write("- **Leadership:** Product Management, Team Leading")
 
 with col_right:
     st.header("📄 Resume")
-    st.info("Download my latest resume for a detailed look at my experience.")
-    # Note: Ensure "resume.pdf" exists in your folder
+    st.info("Download my latest resume for a detailed look at my professional journey.")
     try:
         with open("resume.pdf", "rb") as file:
             st.download_button(
                 label="📥 Download Resume (PDF)",
                 data=file,
-                file_name="My_Professional_Resume.pdf",
+                file_name="Nishant_Ray_Resume.pdf",
                 mime="application/pdf"
             )
     except FileNotFoundError:
-        st.warning("Resume file not found. Please add 'resume.pdf' to your project folder.")
+        st.warning("Resume file not found. Ensure 'resume.pdf' is uploaded to your GitHub repository.")
 
-# --- PROJECT GALLERY (The 'Fancy' Part) ---
+# --- PROJECT GALLERY ---
 st.write("---")
 st.header("🚀 Featured Projects")
 
@@ -94,15 +93,15 @@ with p_col1:
         st.write("Built a Python automation suite that reduced manual entry time by 40%.")
 
 with p_col2:
-    st.image("https://via.placeholder.com/300x200", caption="Data Dashboard")
+    st.image("https://via.placeholder.com/300x200", caption="Product Roadmap")
     with st.expander("View Details"):
-        st.write("Interactive dashboard visualizing real-time sales data using Streamlit.")
+        st.write("Led the lifecycle of a data-driven product from conception to launch.")
 
 with p_col3:
     st.image("https://via.placeholder.com/300x200", caption="API Integration")
     with st.expander("View Details"):
-        st.write("Developed a custom REST API to connect legacy systems with modern apps.")
+        st.write("Developed custom REST APIs to streamline internal data sharing.")
 
 # --- FOOTER ---
 st.write("---")
-st.caption("© 2026 [Your Name] | Built with Python & Streamlit")
+st.caption("© 2026 Nishant Ray | Built with Python & Streamlit")
