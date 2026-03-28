@@ -30,16 +30,19 @@ st.markdown("""
 col1, col2 = st.columns([1, 2], gap="large")
 
 with col1:
-    # UPDATED: Using your uploaded profile pic
-    # Note: Ensure the file extension is correct (e.g., .jpg, .png)
-    st.image("profile_pic.png", width=250) 
+    # Using your uploaded profile_pic.png
+    try:
+        st.image("profile_pic.png", width=250)
+    except:
+        st.image("https://via.placeholder.com/250", width=250)
+        st.warning("Profile picture not found. Ensure 'profile_pic.png' is in your GitHub repo.")
 
 with col2:
     st.title("Hi, I'm Nishant Ray 👋")
     st.subheader("Team Lead - Product | Data Enthusiast | Problem Solver")
     st.write("📍 Located in Gurugram, India")
     
-    # UPDATED: Your specific LinkedIn Link
+    # Your LinkedIn Link
     st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishant-ray-08222810a/)")
 
 # --- ABOUT ME ---
@@ -79,7 +82,7 @@ with col_right:
                 mime="application/pdf"
             )
     except FileNotFoundError:
-        st.warning("Resume file not found. Ensure 'resume.pdf' is uploaded to your GitHub repository.")
+        st.warning("Resume file not found. Ensure 'resume.pdf' is uploaded to GitHub.")
 
 # --- PROJECT GALLERY ---
 st.write("---")
@@ -101,6 +104,28 @@ with p_col3:
     st.image("https://via.placeholder.com/300x200", caption="API Integration")
     with st.expander("View Details"):
         st.write("Developed custom REST APIs to streamline internal data sharing.")
+
+# --- CONTACT FORM ---
+st.write("---")
+st.header("📫 Get In Touch With Me!")
+
+# IMPORTANT: Change the email below to yours to receive messages!
+contact_form = """
+<form action="https://formsubmit.co/your-email@example.com" method="POST">
+     <input type="hidden" name="_tracker" value="false">
+     <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+     <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+     <textarea name="message" placeholder="Your Message Here" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; height: 100px;"></textarea>
+     <button type="submit" style="background-color: #0077b5; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+</form>
+"""
+
+c_col1, c_col2 = st.columns(2)
+with c_col1:
+    st.markdown(contact_form, unsafe_allow_html=True)
+with c_col2:
+    st.write("###")
+    st.write("Feel free to reach out for collaborations, leadership insights, or project discussions!")
 
 # --- FOOTER ---
 st.write("---")
