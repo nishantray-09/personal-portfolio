@@ -34,9 +34,9 @@ with col1:
     st.image("https://via.placeholder.com/250", width=250) 
 
 with col2:
-    st.title("Hi, I'm [Your Name] 👋")
-    st.subheader("Software Engineer | Data Enthusiast | Problem Solver")
-    st.write("📍 Located in [Your City, Country]")
+    st.title("Hi, I'm Nishant Ray 👋")
+    st.subheader("Team Lead - Product | Data Enthusiast | Problem Solver")
+    st.write("📍 Located in [Gurugram, India]")
     
     # LinkedIn Link
     st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yourprofile)")
