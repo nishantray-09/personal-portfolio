@@ -6,16 +6,13 @@ st.set_page_config(page_title="Nishant Ray | Portfolio", page_icon="💼", layou
 # 2. Advanced Styling
 st.markdown("""
     <style>
-    /* Main background */
     .stApp {
         background-color: #f8f9fa;
     }
-    /* Customizing the Profile Image to be circular */
     [data-testid="stImage"] img {
         border-radius: 50%;
         border: 4px solid #0077b5;
     }
-    /* Professional Blue Headers */
     h1, h2 {
         color: #0e1117;
     }
@@ -30,19 +27,15 @@ st.markdown("""
 col1, col2 = st.columns([1, 2], gap="large")
 
 with col1:
-    # Using your uploaded profile_pic.png
     try:
         st.image("profile_pic.png", width=250)
     except:
         st.image("https://via.placeholder.com/250", width=250)
-        st.warning("Profile picture not found. Ensure 'profile_pic.png' is in your GitHub repo.")
 
 with col2:
     st.title("Hi, I'm Nishant Ray 👋")
     st.subheader("Team Lead - Product | Data Enthusiast | Problem Solver")
     st.write("📍 Located in Gurugram, India")
-    
-    # Your LinkedIn Link
     st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishant-ray-08222810a/)")
 
 # --- ABOUT ME ---
@@ -73,21 +66,24 @@ with col_left:
 with col_right:
     st.header("📄 Resume")
     st.info("Download my latest resume for a detailed look at my professional journey.")
+    
+    # UPDATED: Matching your specific filename
+    resume_file_name = "Nishant Ray - Resume.pdf"
+    
     try:
-        with open("resume.pdf", "rb") as file:
+        with open(resume_file_name, "rb") as file:
             st.download_button(
                 label="📥 Download Resume (PDF)",
                 data=file,
-                file_name="Nishant_Ray_Resume.pdf",
+                file_name=resume_file_name,
                 mime="application/pdf"
             )
     except FileNotFoundError:
-        st.warning("Resume file not found. Ensure 'resume.pdf' is uploaded to GitHub.")
+        st.error(f"File '{resume_file_name}' not found. Please ensure it is uploaded to GitHub exactly as named.")
 
 # --- PROJECT GALLERY ---
 st.write("---")
 st.header("🚀 Featured Projects")
-
 p_col1, p_col2, p_col3 = st.columns(3)
 
 with p_col1:
@@ -109,7 +105,7 @@ with p_col3:
 st.write("---")
 st.header("📫 Get In Touch With Me!")
 
-# IMPORTANT: Change the email below to yours to receive messages!
+# Reminder: Replace 'your-email@example.com' with your real email
 contact_form = """
 <form action="https://formsubmit.co/your-email@example.com" method="POST">
      <input type="hidden" name="_tracker" value="false">
@@ -125,7 +121,7 @@ with c_col1:
     st.markdown(contact_form, unsafe_allow_html=True)
 with c_col2:
     st.write("###")
-    st.write("Feel free to reach out for collaborations, leadership insights, or project discussions!")
+    st.write("Feel free to reach out for collaborations or project discussions!")
 
 # --- FOOTER ---
 st.write("---")
