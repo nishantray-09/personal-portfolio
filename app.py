@@ -62,18 +62,19 @@ st.markdown("""
         border: 2px solid #172a45;
     }
     
-    /* FANCY LINKEDIN LOGO STYLING */
+    /* UPDATED LINKEDIN LOGO STYLING */
     .linkedin-container {
         margin-top: 20px;
     }
     .social-icon {
-        width: 40px;
+        width: 35px;
         transition: all 0.3s ease-in-out;
-        filter: invert(85%) sepia(10%) saturate(1000%) hue-rotate(120deg) brightness(95%) contrast(90%); /* Makes it Aqua */
+        /* Force image to white/aqua tint */
+        filter: brightness(0) invert(1) drop-shadow(0px 0px 1px #64ffda);
     }
     .social-icon:hover {
-        transform: translateY(-5px);
-        filter: drop-shadow(0px 0px 10px #64ffda) brightness(1.2); /* Neon Glow */
+        transform: translateY(-3px);
+        filter: brightness(0) invert(1) drop-shadow(0px 0px 8px #64ffda);
     }
     
     /* Text Colors */
@@ -132,11 +133,11 @@ with col2:
         </div>
     """, unsafe_allow_html=True)
     
-    # Fancy LinkedIn Logo with Hover Glow
+    # Updated LinkedIn Logo with White/Aqua effect
     linkedin_html = """
     <div class="linkedin-container">
         <a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="social-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" class="social-icon">
         </a>
     </div>
     """
