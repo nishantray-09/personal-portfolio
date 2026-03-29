@@ -1,7 +1,13 @@
 import streamlit as st
 
-# 1. Page Configuration
+# 1. Page Configuration (Must be the first Streamlit command)
 st.set_page_config(page_title="Nishant Ray | Product Leader", page_icon="💼", layout="wide")
+
+# --- SUCCESS MESSAGE LOGIC ---
+# This checks the URL for "?sent=true" to show a "Thank You" toast
+query_params = st.query_params
+if query_params.get("sent") == "true":
+    st.success("✅ Thank you for reaching out! I've received your message and will get back to you soon.")
 
 # 2. Advanced Styling
 st.markdown("""
@@ -72,6 +78,11 @@ st.markdown("""
         cursor: pointer;
         width: 100%;
         font-weight: bold;
+        transition: 0.3s;
+    }
+    .submit-btn:hover {
+        background-color: #4cd3b4;
+        box-shadow: 0 0 10px #64ffda;
     }
 
     /* Section Dividers */
@@ -88,10 +99,12 @@ with col1:
         st.image("https://via.placeholder.com/280x350")
 
 with col2:
+    # Name with Pronouns
     st.markdown(f'<h1>Nishant Ray <span class="pronouns">(He/Him)</span></h1>', unsafe_allow_html=True)
     st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
     st.write("📍 Gurugram, India")
     
+    # LinkedIn Logo Icon
     linkedin_html = """
     <a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40" class="social-icon">
@@ -143,22 +156,27 @@ with col_right:
         with open(resume_file_name, "rb") as file:
             resume_bytes = file.read()
         
-        # FIXED: Removed use_container_width to make the button smaller
         st.download_button(
             label="📥 DOWNLOAD CV (PDF)",
             data=resume_bytes,
             file_name=resume_file_name,
             mime="application/pdf"
         )
-        
     except FileNotFoundError:
-        st.error("Resume file not found.")
+        st.error("Resume file not found on GitHub.")
 
 # --- CONTACT FORM ---
 st.write("---")
 st.header("📫 Get In Touch")
+
+# ⚠️ ACTION REQUIRED: Replace 'https://your-portfolio.streamlit.app' below with your actual live URL
+my_website_url = "https://your-portfolio.streamlit.app" 
+
 contact_form = f"""
 <form action="https://formsubmit.co/raynishant09@gmail.com" method="POST">
+     <input type="hidden" name="_next" value="{my_website_url}/?sent=true">
+     <input type="hidden" name="_subject" value="New Portfolio Inquiry from NishantRay.com">
+     <input type="hidden" name="_captcha" value="false">
      <input type="text" name="name" placeholder="Name" required>
      <input type="email" name="email" placeholder="Email" required>
      <textarea name="message" placeholder="Message" required></textarea>
