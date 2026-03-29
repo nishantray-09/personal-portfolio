@@ -38,10 +38,11 @@ st.markdown("""
         border: 2px solid #172a45;
     }
     
-    /* LinkedIn Icon Hover Effect */
+    /* Social/LinkedIn Icon Hover Effect */
     .social-icon {
         transition: transform 0.2s;
         filter: drop-shadow(0px 0px 2px #64ffda);
+        margin-top: 10px;
     }
     .social-icon:hover {
         transform: scale(1.1);
@@ -87,7 +88,7 @@ with col1:
         st.image("https://via.placeholder.com/280x350")
 
 with col2:
-    # UPDATED: Name with Pronouns
+    # Name with Pronouns
     st.markdown(f'<h1>Nishant Ray <span class="pronouns">(He/Him)</span></h1>', unsafe_allow_html=True)
     st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
     st.write("📍 Gurugram, India")
@@ -139,11 +140,33 @@ with col_left:
 with col_right:
     st.header("📄 Professional Resume")
     resume_file_name = "Nishant Ray - Resume.pdf"
+    
     try:
         with open(resume_file_name, "rb") as file:
-            st.download_button(label="📥 Download Resume (PDF)", data=file, file_name=resume_file_name, mime="application/pdf")
+            resume_bytes = file.read()
+        
+        # Fancy Download Button
+        st.download_button(
+            label="📥 DOWNLOAD CV (PDF)",
+            data=resume_bytes,
+            file_name=resume_file_name,
+            mime="application/pdf",
+            use_container_width=True,
+            help="Click to save a copy of my resume"
+        )
+        
+        # Hyperlink with Icon for Viewing
+        st.markdown(f"""
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="https://github.com/nishantray-09/personal-portfolio/raw/main/Nishant%20Ray%20-%20Resume.pdf" target="_blank" style="text-decoration: none; color: #64ffda; font-weight: bold; font-size: 1rem;">
+                    <img src="https://img.icons8.com/material-outlined/24/64ffda/external-link.png" style="vertical-align: middle; margin-right: 5px;"/>
+                    View Full Resume in Browser
+                </a>
+            </div>
+        """, unsafe_allow_html=True)
+        
     except FileNotFoundError:
-        st.error("Resume file not found.")
+        st.error("Resume file not found. Please ensure it is uploaded to your GitHub repository.")
 
 # --- CONTACT FORM ---
 st.write("---")
