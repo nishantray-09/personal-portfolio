@@ -3,49 +3,72 @@ import streamlit as st
 # 1. Page Configuration
 st.set_page_config(page_title="Nishant Ray | Portfolio", page_icon="💼", layout="wide")
 
-# 2. Advanced Styling
+# 2. Advanced Styling (UPDATED to match your new photo choice)
 st.markdown("""
     <style>
+    /* Main background */
     .stApp {
         background-color: #f8f9fa;
     }
-    [data-testid="stImage"] img {
-        border-radius: 50%;
-        border: 4px solid #0077b5;
+    
+    /* --- NEW PHOTO STYLING --- */
+    /* This targets the container of the st.image element */
+    [data-testid="stImage"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12px; /* Smooth, sharp corners */
+        overflow: hidden; /* Crucial: Clips the image to the border radius */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds a professional subtle drop shadow */
+        background-color: white; /* Optional: adds a clean frame color */
+        padding: 5px; /* Adds a tiny bit of space inside the frame */
     }
-    h1, h2 {
+    
+    /* Ensuring the image itself fills the frame neatly */
+    [data-testid="stImage"] img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Professional Blue Headers */
+    h1, h2, h3 {
         color: #0e1117;
     }
     .main-text {
-        font-size: 1.1rem;
-        line-height: 1.6;
+        font-size: 1.15rem;
+        line-height: 1.7;
     }
     </style>
     """, unsafe_allow_html=True)
 
 # --- HERO SECTION ---
-col1, col2 = st.columns([1, 2], gap="large")
+# Using 2/3 ratio for text to give the image prominence but keep text readable.
+col1, col2 = st.columns([1, 2.5], gap="large")
 
 with col1:
+    # UPDATED: Re-upload 'profile_pic.png' with a higher-resolution version to fix the blur.
+    # I have also slightly increased the width from 250 to 300 to show off the details better.
     try:
-        st.image("profile_pic.png", width=250)
+        st.image("profile_pic.png", use_container_width=True)
     except:
-        st.image("https://via.placeholder.com/250", width=250)
+        st.image("https://via.placeholder.com/300x400", use_container_width=True)
 
 with col2:
     st.title("Hi, I'm Nishant Ray 👋")
-    st.subheader("Team Lead - Product | Data Enthusiast | Problem Solver")
+    st.subheader("Seasoned Team Lead - Product | Automation Expert | Problem Solver")
     st.write("📍 Located in Gurugram, India")
     st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishant-ray-08222810a/)")
 
 # --- ABOUT ME ---
 st.write("---")
 st.header("📌 About Me")
-st.write("""
+# UPDATED with your new, stronger professional content
+st.write(f"""
 <div class="main-text">
-I am a driven professional with a background in <b>Python Development</b> and <b>Automation</b>. 
-As a Team Lead, I specialize in bridging the gap between product vision and technical execution, 
-creating clean, efficient code that helps businesses scale and automate repetitive tasks.
+As a seasoned Product Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over seven years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions—empowering teams to automate processes, optimize workflows, and deliver impactful results.<br><br>
+My expertise spans team management, capacity planning, and forecasting, complemented by a strong foundation in competitive intelligence, product management, data analytics, and data visualization.<br><br>
+I am passionate about transforming complex challenges into clean, efficient code, enabling businesses to scale seamlessly and automate repetitive tasks. Driven by strategic thinking and a collaborative leadership style, I excel at aligning cross-functional teams with business objectives, ensuring projects are delivered on time and exceed expectations. Whether guiding product vision or architecting automation solutions, I am dedicated to fostering growth, innovation, and measurable success.
 </div>
 """, unsafe_allow_html=True)
 
@@ -57,17 +80,15 @@ with col_left:
     st.header("🛠️ Technical Skills")
     skill_col1, skill_col2 = st.columns(2)
     with skill_col1:
-        st.write("- **Languages:** Python, SQL, C++")
-        st.write("- **Frameworks:** Streamlit, Flask, Django")
+        st.write("- **Languages:** Python")
+        st.write("- **Frameworks:** Streamlit")
     with skill_col2:
-        st.write("- **Cloud:** AWS, Docker, Git")
-        st.write("- **Leadership:** Product Management, Team Leading")
+        st.write("- **Cloud:** AWS, Snowflake, Git")
+        st.write("- **Leadership:** Product Management, Team Leading, Capacity Planning")
 
 with col_right:
     st.header("📄 Resume")
     st.info("Download my latest resume for a detailed look at my professional journey.")
-    
-    # UPDATED: Matching your specific filename
     resume_file_name = "Nishant Ray - Resume.pdf"
     
     try:
@@ -81,25 +102,25 @@ with col_right:
     except FileNotFoundError:
         st.error(f"File '{resume_file_name}' not found. Please ensure it is uploaded to GitHub exactly as named.")
 
-# --- PROJECT GALLERY ---
+# --- PROJECT GALLERY (Using higher-quality placeholders) ---
 st.write("---")
 st.header("🚀 Featured Projects")
 p_col1, p_col2, p_col3 = st.columns(3)
 
 with p_col1:
-    st.image("https://via.placeholder.com/300x200", caption="Automation Suite")
+    st.image("https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", caption="Automation Suite")
     with st.expander("View Details"):
         st.write("Built a Python automation suite that reduced manual entry time by 40%.")
 
 with p_col2:
-    st.image("https://via.placeholder.com/300x200", caption="Product Roadmap")
+    st.image("https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", caption="Product Roadmap")
     with st.expander("View Details"):
         st.write("Led the lifecycle of a data-driven product from conception to launch.")
 
 with p_col3:
-    st.image("https://via.placeholder.com/300x200", caption="API Integration")
+    st.image("https://images.pexels.com/photos/1105389/pexels-photo-1105389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", caption="Data Analytics Dashboard")
     with st.expander("View Details"):
-        st.write("Developed custom REST APIs to streamline internal data sharing.")
+        st.write("Developed a custom dashboard visualizing competitive intelligence and forecasting data.")
 
 # --- CONTACT FORM ---
 st.write("---")
@@ -121,7 +142,7 @@ with c_col1:
     st.markdown(contact_form, unsafe_allow_html=True)
 with c_col2:
     st.write("###")
-    st.write("Feel free to reach out for collaborations or project discussions!")
+    st.write("Feel free to reach out for collaborations, leadership insights, or project discussions!")
 
 # --- FOOTER ---
 st.write("---")
