@@ -24,6 +24,14 @@ st.markdown("""
         margin-left: 10px;
     }
 
+    /* Contact Subtext (Email/Mobile) */
+    .contact-subtext {
+        color: #64ffda;
+        font-size: 1rem;
+        margin-top: 5px;
+        font-family: 'Courier New', monospace;
+    }
+
     /* Executive Summary Spacing Fix */
     .summary-text {
         font-size: 1.15rem;
@@ -47,7 +55,7 @@ st.markdown("""
     .social-icon {
         transition: transform 0.2s;
         filter: drop-shadow(0px 0px 2px #64ffda);
-        margin-top: 10px;
+        margin-top: 15px;
     }
     .social-icon:hover {
         transform: scale(1.1);
@@ -56,13 +64,12 @@ st.markdown("""
     /* Text Colors */
     h1, h2, h3 { color: #ccd6f6 !important; font-weight: 700; }
     
-    /* --- CONTACT FORM STYLING (LEFT ALIGNED) --- */
+    /* Contact Form Styling (Left Aligned) */
     .contact-form-container {
-        max-width: 500px; /* Keeps the boxes small */
-        margin-left: 0;   /* Aligns the container to the left */
+        max-width: 500px;
+        margin-left: 0;
         text-align: left;
     }
-    
     input, textarea {
         background-color: #172a45 !important;
         color: #ccd6f6 !important;
@@ -71,9 +78,7 @@ st.markdown("""
         padding: 8px !important; 
         width: 100% !important;
         margin-bottom: 10px !important;
-        font-size: 0.9rem !important;
     }
-    
     .submit-btn {
         background-color: #64ffda;
         color: #0a192f;
@@ -83,11 +88,6 @@ st.markdown("""
         cursor: pointer;
         width: 100%;
         font-weight: bold;
-        transition: 0.3s;
-    }
-    .submit-btn:hover {
-        background-color: #4cd3b4;
-        box-shadow: 0 0 10px #64ffda;
     }
 
     /* Section Dividers */
@@ -104,13 +104,21 @@ with col1:
         st.image("https://via.placeholder.com/280x350")
 
 with col2:
+    # Name with Pronouns
     st.markdown(f'<h1>Nishant Ray <span class="pronouns">(He/Him)</span></h1>', unsafe_allow_html=True)
     st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
-    st.write("📍 Gurugram, India")
     
+    # NEW: Contact Details under Name
+    st.markdown("""
+        <div class="contact-subtext">
+            📧 raynishant09@gmail.com &nbsp;&nbsp;|&nbsp;&nbsp; 📱 +91 9481955387 &nbsp;&nbsp;|&nbsp;&nbsp; 📍 Gurugram, India
+        </div>
+    """, unsafe_allow_html=True)
+    
+    # LinkedIn Logo Icon
     linkedin_html = """
     <a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40" class="social-icon">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="35" class="social-icon">
     </a>
     """
     st.markdown(linkedin_html, unsafe_allow_html=True)
@@ -166,7 +174,7 @@ with col_right:
             mime="application/pdf"
         )
     except FileNotFoundError:
-        st.error("Resume file not found on GitHub.")
+        st.error("Resume file not found.")
 
 # --- CONTACT FORM ---
 st.write("---")
