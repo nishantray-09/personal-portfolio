@@ -1,6 +1,6 @@
 import streamlit as st
 
-# 1. Page Configuration (Must be the first Streamlit command)
+# 1. Page Configuration
 st.set_page_config(page_title="Nishant Ray | Product Leader", page_icon="💼", layout="wide")
 
 # 2. Advanced Styling
@@ -11,6 +11,14 @@ st.markdown("""
         background-color: #0a192f; 
     }
     
+    /* Pronouns Styling */
+    .pronouns {
+        font-size: 1.2rem;
+        color: #8892b0;
+        font-weight: 400;
+        margin-left: 10px;
+    }
+
     /* Executive Summary Spacing Fix */
     .summary-text {
         font-size: 1.15rem;
@@ -79,7 +87,8 @@ with col1:
         st.image("https://via.placeholder.com/280x350")
 
 with col2:
-    st.title("Nishant Ray")
+    # UPDATED: Name with Pronouns
+    st.markdown(f'<h1>Nishant Ray <span class="pronouns">(He/Him)</span></h1>', unsafe_allow_html=True)
     st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
     st.write("📍 Gurugram, India")
     
