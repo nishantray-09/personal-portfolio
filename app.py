@@ -125,7 +125,7 @@ with col2:
 
 # --- EXECUTIVE SUMMARY ---
 st.write("---")
-st.header("📌 Executive Summary")
+st.header("📌Summary")
 st.write(f"""
 <div class="summary-text">
 <p>As a seasoned Product Team Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over seven years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions—empowering teams to automate processes, optimize workflows, and deliver impactful results.</p>
