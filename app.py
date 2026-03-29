@@ -3,7 +3,7 @@ import streamlit as st
 # 1. Page Configuration
 st.set_page_config(page_title="Nishant Ray | Portfolio", page_icon="💼", layout="wide")
 
-# 2. Advanced Styling (UPDATED to match your new photo choice)
+# 2. Advanced Styling
 st.markdown("""
     <style>
     /* Main background */
@@ -11,23 +11,23 @@ st.markdown("""
         background-color: #f8f9fa;
     }
     
-    /* --- NEW PHOTO STYLING --- */
-    /* This targets the container of the st.image element */
+    /* --- UPDATED PHOTO STYLING --- */
     [data-testid="stImage"] {
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 12px; /* Smooth, sharp corners */
-        overflow: hidden; /* Crucial: Clips the image to the border radius */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adds a professional subtle drop shadow */
-        background-color: white; /* Optional: adds a clean frame color */
-        padding: 5px; /* Adds a tiny bit of space inside the frame */
+        border-radius: 12px; 
+        overflow: hidden; 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+        background-color: white; 
+        padding: 5px;
+        max-width: 220px; /* This controls the maximum size of the photo */
+        margin: auto;
     }
     
-    /* Ensuring the image itself fills the frame neatly */
     [data-testid="stImage"] img {
         display: block;
-        max-width: 100%;
+        width: 100%;
         height: auto;
     }
 
@@ -43,16 +43,15 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # --- HERO SECTION ---
-# Using 2/3 ratio for text to give the image prominence but keep text readable.
-col1, col2 = st.columns([1, 2.5], gap="large")
+# UPDATED: Changed column ratio to 0.8 and 3 to shrink the left side
+col1, col2 = st.columns([0.8, 3], gap="large")
 
 with col1:
-    # UPDATED: Re-upload 'profile_pic.png' with a higher-resolution version to fix the blur.
-    # I have also slightly increased the width from 250 to 300 to show off the details better.
     try:
-        st.image("profile_pic.png", use_container_width=True)
+        # UPDATED: Removed use_container_width to let the CSS max-width take over
+        st.image("profile_pic.png")
     except:
-        st.image("https://via.placeholder.com/300x400", use_container_width=True)
+        st.image("https://via.placeholder.com/220x280")
 
 with col2:
     st.title("Hi, I'm Nishant Ray 👋")
@@ -63,10 +62,9 @@ with col2:
 # --- ABOUT ME ---
 st.write("---")
 st.header("📌 About Me")
-# UPDATED with your new, stronger professional content
 st.write(f"""
 <div class="main-text">
-As a seasoned Product Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over seven years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions—empowering teams to automate processes, optimize workflows, and deliver impactful results.<br><br>
+As a seasoned Product Team Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over six years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions—empowering teams to automate processes, optimize workflows, and deliver impactful results.<br><br>
 My expertise spans team management, capacity planning, and forecasting, complemented by a strong foundation in competitive intelligence, product management, data analytics, and data visualization.<br><br>
 I am passionate about transforming complex challenges into clean, efficient code, enabling businesses to scale seamlessly and automate repetitive tasks. Driven by strategic thinking and a collaborative leadership style, I excel at aligning cross-functional teams with business objectives, ensuring projects are delivered on time and exceed expectations. Whether guiding product vision or architecting automation solutions, I am dedicated to fostering growth, innovation, and measurable success.
 </div>
@@ -80,10 +78,10 @@ with col_left:
     st.header("🛠️ Technical Skills")
     skill_col1, skill_col2 = st.columns(2)
     with skill_col1:
-        st.write("- **Languages:** Python")
-        st.write("- **Frameworks:** Streamlit")
+        st.write("- **Languages:** Python, SQL, C++")
+        st.write("- **Frameworks:** Streamlit, Flask, Django")
     with skill_col2:
-        st.write("- **Cloud:** AWS, Snowflake, Git")
+        st.write("- **Cloud:** AWS, Docker, Git")
         st.write("- **Leadership:** Product Management, Team Leading, Capacity Planning")
 
 with col_right:
@@ -100,9 +98,9 @@ with col_right:
                 mime="application/pdf"
             )
     except FileNotFoundError:
-        st.error(f"File '{resume_file_name}' not found. Please ensure it is uploaded to GitHub exactly as named.")
+        st.error(f"File '{resume_file_name}' not found on GitHub.")
 
-# --- PROJECT GALLERY (Using higher-quality placeholders) ---
+# --- PROJECT GALLERY ---
 st.write("---")
 st.header("🚀 Featured Projects")
 p_col1, p_col2, p_col3 = st.columns(3)
