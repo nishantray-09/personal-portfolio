@@ -38,7 +38,7 @@ st.markdown("""
         border: 2px solid #172a45;
     }
     
-    /* LinkedIn Icon Hover */
+    /* Social/LinkedIn Icon Hover */
     .social-icon {
         transition: transform 0.2s;
         filter: drop-shadow(0px 0px 2px #64ffda);
@@ -136,7 +136,6 @@ with col_left:
     st.write("📈 **Capacity Planning** | 🧠 **Competitive Intel**")
 
 with col_right:
-    # UPDATED: Just icon and "Resume"
     st.header("📄 Resume")
     resume_file_name = "Nishant Ray - Resume.pdf"
     
@@ -144,22 +143,13 @@ with col_right:
         with open(resume_file_name, "rb") as file:
             resume_bytes = file.read()
         
+        # FIXED: Removed use_container_width to make the button smaller
         st.download_button(
             label="📥 DOWNLOAD CV (PDF)",
             data=resume_bytes,
             file_name=resume_file_name,
-            mime="application/pdf",
-            use_container_width=True
+            mime="application/pdf"
         )
-        
-        st.markdown(f"""
-            <div style="text-align: center; margin-top: 15px;">
-                <a href="https://github.com/nishantray-09/personal-portfolio/raw/main/Nishant%20Ray%20-%20Resume.pdf" target="_blank" style="text-decoration: none; color: #64ffda; font-weight: bold; font-size: 1rem;">
-                    <img src="https://img.icons8.com/material-outlined/24/64ffda/external-link.png" style="vertical-align: middle; margin-right: 5px;"/>
-                    View Full Resume in Browser
-                </a>
-            </div>
-        """, unsafe_allow_html=True)
         
     except FileNotFoundError:
         st.error("Resume file not found.")
