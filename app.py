@@ -11,9 +11,16 @@ if query_params.get("sent") == "true":
 # 2. Advanced Styling
 st.markdown("""
     <style>
-    /* Main Background: Deep Midnight Blue */
+    /* Background Gradient Animation */
     .stApp { 
-        background-color: #0a192f; 
+        background: linear-gradient(-45deg, #0a192f, #0d1f3d, #0a192f);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
     
     /* Pronouns Styling */
@@ -24,15 +31,19 @@ st.markdown("""
         margin-left: 10px;
     }
 
-    /* Contact Subtext (Email/Mobile) */
+    /* Contact Subtext (Glassmorphism look) */
     .contact-subtext {
         color: #64ffda;
         font-size: 1rem;
         margin-top: 5px;
         font-family: 'Courier New', monospace;
+        background: rgba(100, 255, 218, 0.05);
+        padding: 5px 15px;
+        border-radius: 5px;
+        display: inline-block;
     }
 
-    /* Executive Summary Spacing Fix */
+    /* Executive Summary Styling */
     .summary-text {
         font-size: 1.15rem;
         line-height: 1.6;
@@ -51,20 +62,24 @@ st.markdown("""
         border: 2px solid #172a45;
     }
     
-    /* Social/LinkedIn Icon Hover */
+    /* FANCY LINKEDIN LOGO STYLING */
+    .linkedin-container {
+        margin-top: 20px;
+    }
     .social-icon {
-        transition: transform 0.2s;
-        filter: drop-shadow(0px 0px 2px #64ffda);
-        margin-top: 15px;
+        width: 40px;
+        transition: all 0.3s ease-in-out;
+        filter: invert(85%) sepia(10%) saturate(1000%) hue-rotate(120deg) brightness(95%) contrast(90%); /* Makes it Aqua */
     }
     .social-icon:hover {
-        transform: scale(1.1);
+        transform: translateY(-5px);
+        filter: drop-shadow(0px 0px 10px #64ffda) brightness(1.2); /* Neon Glow */
     }
     
     /* Text Colors */
     h1, h2, h3 { color: #ccd6f6 !important; font-weight: 700; }
     
-    /* Contact Form Styling (Left Aligned) */
+    /* Contact Form Styling */
     .contact-form-container {
         max-width: 500px;
         margin-left: 0;
@@ -75,22 +90,26 @@ st.markdown("""
         color: #ccd6f6 !important;
         border: 1px solid #233554 !important;
         border-radius: 8px !important;
-        padding: 8px !important; 
+        padding: 10px !important; 
         width: 100% !important;
         margin-bottom: 10px !important;
     }
     .submit-btn {
-        background-color: #64ffda;
-        color: #0a192f;
+        background-color: transparent;
+        color: #64ffda;
         padding: 10px 20px; 
-        border: none;
-        border-radius: 8px;
+        border: 1px solid #64ffda;
+        border-radius: 5px;
         cursor: pointer;
         width: 100%;
         font-weight: bold;
+        transition: 0.3s;
+    }
+    .submit-btn:hover {
+        background-color: rgba(100, 255, 218, 0.1);
+        box-shadow: 0 0 10px #64ffda;
     }
 
-    /* Section Dividers */
     hr { border: 0; height: 1px; background: #233554; }
     </style>
     """, unsafe_allow_html=True)
@@ -104,28 +123,28 @@ with col1:
         st.image("https://via.placeholder.com/280x350")
 
 with col2:
-    # Name with Pronouns
     st.markdown(f'<h1>Nishant Ray <span class="pronouns">(He/Him)</span></h1>', unsafe_allow_html=True)
     st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
     
-    # NEW: Contact Details under Name
     st.markdown("""
         <div class="contact-subtext">
             📧 raynishant09@gmail.com &nbsp;&nbsp;|&nbsp;&nbsp; 📱 +91 9481955387 &nbsp;&nbsp;|&nbsp;&nbsp; 📍 Gurugram, India
         </div>
     """, unsafe_allow_html=True)
     
-    # LinkedIn Logo Icon
+    # Fancy LinkedIn Logo with Hover Glow
     linkedin_html = """
-    <a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="35" class="social-icon">
-    </a>
+    <div class="linkedin-container">
+        <a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="social-icon">
+        </a>
+    </div>
     """
     st.markdown(linkedin_html, unsafe_allow_html=True)
 
 # --- EXECUTIVE SUMMARY ---
 st.write("---")
-st.header("📌Summary")
+st.header("📌 Summary")
 st.write(f"""
 <div class="summary-text">
 <p>As a seasoned Product Team Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over seven years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions—empowering teams to automate processes, optimize workflows, and deliver impactful results.</p>
