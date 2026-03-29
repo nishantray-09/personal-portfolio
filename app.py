@@ -18,7 +18,7 @@ st.markdown("""
         color: #8892b0;
     }
     .summary-text p {
-        margin-bottom: 12px !important; /* Reduced space between paragraphs */
+        margin-bottom: 12px !important;
     }
 
     /* Profile Photo Frame */
@@ -28,6 +28,15 @@ st.markdown("""
         max-width: 280px; 
         margin: auto;
         border: 2px solid #172a45;
+    }
+    
+    /* LinkedIn Icon Hover Effect */
+    .social-icon {
+        transition: transform 0.2s;
+        filter: drop-shadow(0px 0px 2px #64ffda);
+    }
+    .social-icon:hover {
+        transform: scale(1.1);
     }
     
     /* Text Colors */
@@ -73,7 +82,14 @@ with col2:
     st.title("Nishant Ray")
     st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
     st.write("📍 Gurugram, India")
-    st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishant-ray-08222810a/)")
+    
+    # LinkedIn Logo Icon
+    linkedin_html = """
+    <a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40" class="social-icon">
+    </a>
+    """
+    st.markdown(linkedin_html, unsafe_allow_html=True)
 
 # --- EXECUTIVE SUMMARY ---
 st.write("---")
