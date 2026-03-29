@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Nishant Ray | Product Leader", page_icon="💼", layout="wide")
 
 # --- SUCCESS MESSAGE LOGIC ---
-# This checks the URL for "?sent=true" to show a "Thank You" toast
+# Checks the URL for "?sent=true" to show a "Thank You" toast
 query_params = st.query_params
 if query_params.get("sent") == "true":
     st.success("✅ Thank you for reaching out! I've received your message and will get back to you soon.")
@@ -169,8 +169,8 @@ with col_right:
 st.write("---")
 st.header("📫 Get In Touch")
 
-# ⚠️ ACTION REQUIRED: Replace 'https://your-portfolio.streamlit.app' below with your actual live URL
-my_website_url = "https://your-portfolio.streamlit.app" 
+# This is your actual live URL for the redirect
+my_website_url = "https://nishant-portfolio.streamlit.app" 
 
 contact_form = f"""
 <form action="https://formsubmit.co/raynishant09@gmail.com" method="POST">
