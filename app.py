@@ -1,10 +1,10 @@
 import streamlit as st
-import streamlit_analytics2 as analytics # 1. Import the library
+import streamlit_analytics2 as analytics 
 
-# 2. Wrap EVERYTHING in this 'with' block
+# Wrap everything in the analytics tracker
 with analytics.track():
     
-    # --- ALL YOUR EXISTING CODE STARTS HERE ---
+    # 1. Page Configuration
     st.set_page_config(page_title="Nishant Ray | Product Leader", page_icon="💼", layout="wide")
 
     # --- SUCCESS MESSAGE LOGIC ---
@@ -28,6 +28,7 @@ with analytics.track():
         .pronouns { font-size: 1.2rem; color: #8892b0; font-weight: 400; margin-left: 10px; }
         .contact-subtext { color: #64ffda; font-size: 1rem; margin-top: 5px; font-family: 'Courier New', monospace; background: rgba(100, 255, 218, 0.05); padding: 5px 15px; border-radius: 5px; display: inline-block; }
         .summary-text { font-size: 1.15rem; line-height: 1.6; color: #8892b0; }
+        .summary-text p { margin-bottom: 12px !important; }
         [data-testid="stImage"] { border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); max-width: 280px; margin: auto; border: 2px solid #172a45; }
         .linkedin-container { margin-top: 20px; }
         .social-icon { width: 35px; transition: all 0.3s ease-in-out; filter: brightness(0) invert(1) drop-shadow(0px 0px 1px #64ffda); }
@@ -52,10 +53,16 @@ with analytics.track():
         st.markdown("""<div class="contact-subtext">📧 raynishant09@gmail.com &nbsp;|&nbsp; 📱 +91 9481955387 &nbsp;|&nbsp; 📍 Gurugram, India</div>""", unsafe_allow_html=True)
         st.markdown("""<div class="linkedin-container"><a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" class="social-icon"></a></div>""", unsafe_allow_html=True)
 
-    # --- SUMMARY ---
+    # --- FULL SUMMARY RESTORED ---
     st.write("---")
     st.header("📌 Summary")
-    st.write('<div class="summary-text"><p>As a seasoned Product Team Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution...</p></div>', unsafe_allow_html=True)
+    st.write(f"""
+    <div class="summary-text">
+    <p>As a seasoned Product Team Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over seven years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions—empowering teams to automate processes, optimize workflows, and deliver impactful results.</p>
+    <p>My expertise spans team management, capacity planning, and forecasting, complemented by a strong foundation in competitive intelligence, product management, data analytics, and data visualization.</p>
+    <p>I am passionate about transforming complex challenges into clean, efficient code, enabling businesses to scale seamlessly and automate repetitive tasks. Driven by strategic thinking and a collaborative leadership style, I excel at aligning cross-functional teams with business objectives, ensuring projects are delivered on time and exceed expectations. Whether guiding product vision or architecting automation solutions, I am dedicated to fostering growth, innovation, and measurable success.</p>
+    </div>
+    """, unsafe_allow_html=True)
 
     # --- TOOLS & TECHNOLOGIES ---
     st.write("---")
@@ -67,7 +74,9 @@ with analytics.track():
     col_left, col_right = st.columns(2)
     with col_left:
         st.header("🎯 Core Expertise")
-        st.write("🚀 **Product Management** | 🤖 **Process Automation** | 📊 **Data Visualization** | 👥 **Team Leadership**")
+        st.write("🚀 **Product Management** | 🤖 **Process Automation**")
+        st.write("📊 **Data Visualization** | 👥 **Team Leadership**")
+        st.write("📈 **Capacity Planning** | 🧠 **Competitive Intel**")
     with col_right:
         st.header("📄 Resume")
         try:
@@ -78,7 +87,8 @@ with analytics.track():
     # --- CONTACT FORM ---
     st.write("---")
     st.header("📫 Get In Touch")
-    contact_form = f"""<div class="contact-form-container"><form action="https://formsubmit.co/raynishant09@gmail.com" method="POST"><input type="hidden" name="_next" value="https://nishant-portfolio.streamlit.app/?sent=true"><input type="text" name="name" placeholder="Name" required><input type="email" name="email" placeholder="Email" required><textarea name="message" placeholder="Message" required style="height: 80px;"></textarea><button type="submit" class="submit-btn">Send Message</button></form></div>"""
+    my_website_url = "https://nishant-portfolio.streamlit.app" 
+    contact_form = f"""<div class="contact-form-container"><form action="https://formsubmit.co/raynishant09@gmail.com" method="POST"><input type="hidden" name="_next" value="{my_website_url}/?sent=true"><input type="hidden" name="_subject" value="New Portfolio Inquiry"><input type="hidden" name="_captcha" value="false"><input type="text" name="name" placeholder="Name" required><input type="email" name="email" placeholder="Email" required><textarea name="message" placeholder="Message" required style="height: 80px;"></textarea><button type="submit" class="submit-btn">Send Message</button></form></div>"""
     st.markdown(contact_form, unsafe_allow_html=True)
 
     st.write("---")
