@@ -21,7 +21,7 @@ st.markdown("""
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
         background-color: white; 
         padding: 5px;
-        max-width: 220px; /* This controls the maximum size of the photo */
+        max-width: 320px; /* This controls the maximum size of the photo */
         margin: auto;
     }
     
