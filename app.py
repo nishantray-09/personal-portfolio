@@ -38,7 +38,7 @@ st.markdown("""
         border: 2px solid #172a45;
     }
     
-    /* Social/LinkedIn Icon Hover Effect */
+    /* LinkedIn Icon Hover */
     .social-icon {
         transition: transform 0.2s;
         filter: drop-shadow(0px 0px 2px #64ffda);
@@ -88,12 +88,10 @@ with col1:
         st.image("https://via.placeholder.com/280x350")
 
 with col2:
-    # Name with Pronouns
     st.markdown(f'<h1>Nishant Ray <span class="pronouns">(He/Him)</span></h1>', unsafe_allow_html=True)
     st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
     st.write("📍 Gurugram, India")
     
-    # LinkedIn Logo Icon
     linkedin_html = """
     <a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40" class="social-icon">
@@ -138,24 +136,22 @@ with col_left:
     st.write("📈 **Capacity Planning** | 🧠 **Competitive Intel**")
 
 with col_right:
-    st.header("📄 Professional Resume")
+    # UPDATED: Just icon and "Resume"
+    st.header("📄 Resume")
     resume_file_name = "Nishant Ray - Resume.pdf"
     
     try:
         with open(resume_file_name, "rb") as file:
             resume_bytes = file.read()
         
-        # Fancy Download Button
         st.download_button(
             label="📥 DOWNLOAD CV (PDF)",
             data=resume_bytes,
             file_name=resume_file_name,
             mime="application/pdf",
-            use_container_width=True,
-            help="Click to save a copy of my resume"
+            use_container_width=True
         )
         
-        # Hyperlink with Icon for Viewing
         st.markdown(f"""
             <div style="text-align: center; margin-top: 15px;">
                 <a href="https://github.com/nishantray-09/personal-portfolio/raw/main/Nishant%20Ray%20-%20Resume.pdf" target="_blank" style="text-decoration: none; color: #64ffda; font-weight: bold; font-size: 1rem;">
@@ -166,7 +162,7 @@ with col_right:
         """, unsafe_allow_html=True)
         
     except FileNotFoundError:
-        st.error("Resume file not found. Please ensure it is uploaded to your GitHub repository.")
+        st.error("Resume file not found.")
 
 # --- CONTACT FORM ---
 st.write("---")
