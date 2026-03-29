@@ -56,10 +56,11 @@ st.markdown("""
     /* Text Colors */
     h1, h2, h3 { color: #ccd6f6 !important; font-weight: 700; }
     
-    /* --- UPDATED CONTACT FORM STYLING --- */
+    /* --- CONTACT FORM STYLING (LEFT ALIGNED) --- */
     .contact-form-container {
-        max-width: 500px; /* Limits the width of the entire form */
-        margin: auto;     /* Centers the form */
+        max-width: 500px; /* Keeps the boxes small */
+        margin-left: 0;   /* Aligns the container to the left */
+        text-align: left;
     }
     
     input, textarea {
@@ -67,7 +68,7 @@ st.markdown("""
         color: #ccd6f6 !important;
         border: 1px solid #233554 !important;
         border-radius: 8px !important;
-        padding: 8px !important; /* Reduced padding from 12px to 8px to make boxes shorter */
+        padding: 8px !important; 
         width: 100% !important;
         margin-bottom: 10px !important;
         font-size: 0.9rem !important;
@@ -76,7 +77,7 @@ st.markdown("""
     .submit-btn {
         background-color: #64ffda;
         color: #0a192f;
-        padding: 10px 20px; /* Smaller button padding */
+        padding: 10px 20px; 
         border: none;
         border-radius: 8px;
         cursor: pointer;
@@ -173,7 +174,6 @@ st.header("📫 Get In Touch")
 
 my_website_url = "https://nishant-portfolio.streamlit.app" 
 
-# Added a div wrapper 'contact-form-container' to apply the smaller width
 contact_form = f"""
 <div class="contact-form-container">
     <form action="https://formsubmit.co/raynishant09@gmail.com" method="POST">
