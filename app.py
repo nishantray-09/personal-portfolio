@@ -62,7 +62,7 @@ with col1:
 
 with col2:
     st.title("Nishant Ray")
-    st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
+    st.subheader("Product Lead | Automation Architect | Strategy & Execution")
     st.write("📍 Gurugram, India")
     st.markdown("[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nishant-ray-08222810a/)")
 
