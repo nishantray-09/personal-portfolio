@@ -1,10 +1,9 @@
 import streamlit as st
 
-# 1. Page Configuration (Must be the first Streamlit command)
+# 1. Page Configuration
 st.set_page_config(page_title="Nishant Ray | Product Leader", page_icon="💼", layout="wide")
 
 # --- SUCCESS MESSAGE LOGIC ---
-# Checks the URL for "?sent=true" to show a "Thank You" toast
 query_params = st.query_params
 if query_params.get("sent") == "true":
     st.success("✅ Thank you for reaching out! I've received your message and will get back to you soon.")
@@ -57,22 +56,27 @@ st.markdown("""
     /* Text Colors */
     h1, h2, h3 { color: #ccd6f6 !important; font-weight: 700; }
     
-    /* Contact Form Styling */
+    /* --- UPDATED CONTACT FORM STYLING --- */
+    .contact-form-container {
+        max-width: 500px; /* Limits the width of the entire form */
+        margin: auto;     /* Centers the form */
+    }
+    
     input, textarea {
         background-color: #172a45 !important;
         color: #ccd6f6 !important;
         border: 1px solid #233554 !important;
         border-radius: 8px !important;
-        padding: 12px !important;
+        padding: 8px !important; /* Reduced padding from 12px to 8px to make boxes shorter */
         width: 100% !important;
-        margin-bottom: 12px !important;
+        margin-bottom: 10px !important;
+        font-size: 0.9rem !important;
     }
     
-    /* Submit Button */
     .submit-btn {
         background-color: #64ffda;
         color: #0a192f;
-        padding: 12px 24px;
+        padding: 10px 20px; /* Smaller button padding */
         border: none;
         border-radius: 8px;
         cursor: pointer;
@@ -99,12 +103,10 @@ with col1:
         st.image("https://via.placeholder.com/280x350")
 
 with col2:
-    # Name with Pronouns
     st.markdown(f'<h1>Nishant Ray <span class="pronouns">(He/Him)</span></h1>', unsafe_allow_html=True)
     st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
     st.write("📍 Gurugram, India")
     
-    # LinkedIn Logo Icon
     linkedin_html = """
     <a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="40" class="social-icon">
@@ -169,19 +171,21 @@ with col_right:
 st.write("---")
 st.header("📫 Get In Touch")
 
-# This is your actual live URL for the redirect
 my_website_url = "https://nishant-portfolio.streamlit.app" 
 
+# Added a div wrapper 'contact-form-container' to apply the smaller width
 contact_form = f"""
-<form action="https://formsubmit.co/raynishant09@gmail.com" method="POST">
-     <input type="hidden" name="_next" value="{my_website_url}/?sent=true">
-     <input type="hidden" name="_subject" value="New Portfolio Inquiry from NishantRay.com">
-     <input type="hidden" name="_captcha" value="false">
-     <input type="text" name="name" placeholder="Name" required>
-     <input type="email" name="email" placeholder="Email" required>
-     <textarea name="message" placeholder="Message" required></textarea>
-     <button type="submit" class="submit-btn">Send Message</button>
-</form>
+<div class="contact-form-container">
+    <form action="https://formsubmit.co/raynishant09@gmail.com" method="POST">
+         <input type="hidden" name="_next" value="{my_website_url}/?sent=true">
+         <input type="hidden" name="_subject" value="New Portfolio Inquiry from NishantRay.com">
+         <input type="hidden" name="_captcha" value="false">
+         <input type="text" name="name" placeholder="Name" required>
+         <input type="email" name="email" placeholder="Email" required>
+         <textarea name="message" placeholder="Message" required style="height: 80px;"></textarea>
+         <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+</div>
 """
 st.markdown(contact_form, unsafe_allow_html=True)
 
