@@ -3,15 +3,10 @@ import streamlit as st
 # 1. Page Configuration
 st.set_page_config(page_title="Nishant Ray | Product Leader", page_icon="💼", layout="wide")
 
-# 2. Advanced Styling for Dark/Authoritative Theme
+# 2. Advanced Styling
 st.markdown("""
     <style>
-    /* Global Background Fix */
-    .stApp {
-        background-color: #0b0e14;
-    }
-
-    /* Professional Profile Photo Frame */
+    .stApp { background-color: #0b0e14; }
     [data-testid="stImage"] {
         border-radius: 15px; 
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
@@ -19,38 +14,26 @@ st.markdown("""
         margin: auto;
         border: 1px solid #30363d;
     }
+    .main-text { font-size: 1.15rem; line-height: 1.8; color: #c9d1d9; }
+    h1, h2, h3 { color: #ffffff !important; }
     
-    /* Contact Form Styling for Dark Theme */
-    input, textarea {
-        background-color: #1c2128 !important;
-        color: #ecf0f1 !important;
-        border: 1px solid #30363d !important;
-        border-radius: 8px !important;
-    }
-    
-    /* Headers & Text */
-    h1, h2, h3 {
-        color: #ffffff !important;
-        font-weight: 700;
-    }
-    .main-text {
-        font-size: 1.15rem;
-        line-height: 1.8;
-        color: #c9d1d9;
-    }
-
-    /* Customizing the Divider Line */
-    hr {
-        border: 0;
-        height: 1px;
-        background: #30363d;
+    /* Tool Badge Styling */
+    .tool-badge {
+        display: inline-block;
+        padding: 5px 12px;
+        margin: 5px;
+        border-radius: 20px;
+        background-color: #1c2128;
+        border: 1px solid #30363d;
+        color: #00a0dc;
+        font-weight: bold;
+        font-size: 0.9rem;
     }
     </style>
     """, unsafe_allow_html=True)
 
 # --- HERO SECTION ---
 col1, col2 = st.columns([1, 3], gap="large")
-
 with col1:
     try:
         st.image("profile_pic.png")
@@ -68,27 +51,37 @@ st.write("---")
 st.header("📌 Executive Summary")
 st.write(f"""
 <div class="main-text">
-As a seasoned Product Team Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over six years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions—empowering teams to automate processes, optimize workflows, and deliver impactful results.<br><br>
-My expertise spans team management, capacity planning, and forecasting, complemented by a strong foundation in competitive intelligence, product management, data analytics, and data visualization.<br><br>
-I am passionate about transforming complex challenges into clean, efficient code, enabling businesses to scale seamlessly and automate repetitive tasks. Driven by strategic thinking and a collaborative leadership style, I excel at aligning cross-functional teams with business objectives, ensuring projects are delivered on time and exceed expectations.
+As a seasoned Product Team Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over six years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions...
 </div>
 """, unsafe_allow_html=True)
+
+# --- NEW TOOLS SECTION ---
+st.write("---")
+st.header("🛠️ Tools & Technologies")
+
+# Creating a visually appealing grid of tech badges
+# We use markdown with shields.io for a "Pro" developer look
+tools_html = """
+<div style="text-align: left;">
+    <img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=microsoftpowerbi&logoColor=black" />
+    <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" />
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+    <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white" />
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+    <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" />
+</div>
+"""
+st.markdown(tools_html, unsafe_allow_html=True)
 
 # --- SKILLS & RESUME ---
 st.write("---")
 col_left, col_right = st.columns(2)
 
 with col_left:
-    st.header("🛠️ Core Expertise")
-    skill_col1, skill_col2 = st.columns(2)
-    with skill_col1:
-        st.write("🚀 **Product Management**")
-        st.write("🤖 **Process Automation**")
-        st.write("📊 **Data Visualization**")
-    with skill_col2:
-        st.write("👥 **Team Leadership**")
-        st.write("📈 **Capacity Planning**")
-        st.write("🧠 **Competitive Intel**")
+    st.header("🎯 Core Expertise")
+    st.write("🚀 **Product Management** | 🤖 **Process Automation**")
+    st.write("📊 **Data Visualization** | 👥 **Team Leadership**")
+    st.write("📈 **Capacity Planning** | 🧠 **Competitive Intel**")
 
 with col_right:
     st.header("📄 Professional Resume")
@@ -101,14 +94,12 @@ with col_right:
 
 # --- CONTACT FORM ---
 st.write("---")
-st.header("📫 Contact")
-
-# REPLACE WITH YOUR REAL EMAIL
+st.header("📫 Get In Touch")
 contact_form = """
 <form action="https://formsubmit.co/your-email@example.com" method="POST">
-     <input type="text" name="name" placeholder="Name" required style="width: 100%; padding: 12px; margin-bottom: 12px;">
-     <input type="email" name="email" placeholder="Email" required style="width: 100%; padding: 12px; margin-bottom: 12px;">
-     <textarea name="message" placeholder="Message" required style="width: 100%; padding: 12px; margin-bottom: 12px; height: 100px;"></textarea>
+     <input type="text" name="name" placeholder="Name" required style="width: 100%; padding: 12px; margin-bottom: 12px; background-color: #1c2128; color: white; border: 1px solid #30363d;">
+     <input type="email" name="email" placeholder="Email" required style="width: 100%; padding: 12px; margin-bottom: 12px; background-color: #1c2128; color: white; border: 1px solid #30363d;">
+     <textarea name="message" placeholder="Message" required style="width: 100%; padding: 12px; margin-bottom: 12px; height: 100px; background-color: #1c2128; color: white; border: 1px solid #30363d;"></textarea>
      <button type="submit" style="background-color: #00a0dc; color: white; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; width: 100%;">Send Message</button>
 </form>
 """
