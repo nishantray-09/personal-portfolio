@@ -146,7 +146,7 @@ with analytics.track():
         st.write("A showcase of key automation frameworks, analytical tools, and product initiatives built to drive business efficiency.")
         st.write("")
 
-        # First Project Card
+        # Project Card 1
         st.markdown("""
         <div class="project-card">
             <div class="project-title">💼 CRM Lead Ingestion Automation</div>
@@ -163,15 +163,12 @@ with analytics.track():
         </div>
         """, unsafe_allow_html=True)
 
-        # Space ready for the next project cards you share!
-
     # ==================== TAB 3: RECOMMENDATIONS ====================
     with tab_recommendations:
         st.header("💬 Recommendations")
         st.write("Testimonials from managers, colleagues, and team members received on LinkedIn.")
         st.write("")
 
-        # Split into two columns for structured desktop viewing
         rec_col1, rec_col2 = st.columns(2, gap="large")
 
         with rec_col1:
@@ -184,10 +181,14 @@ with analytics.track():
             </div>
             """, unsafe_allow_html=True)
             
-            # 2. Bhargava Bhavaraju
+            # 2. Bhargava Bhavaraju (FULLY UPDATED WITH THREE PARAGRAPHS)
             st.markdown("""
             <div class="rec-card">
-                <div class="rec-text">"I had the opportunity to work with Nishant, and it was genuinely a great learning experience. Nishant has a strong ability to balance strategic thinking with execution, especially in areas like automation, analytics, and operational management.<br><br>What stood out most to me was his approach to leadership. He was always approachable, solution-oriented, and deeply involved in helping the team grow while ensuring business goals were met efficiently. His ability to identify bottlenecks, streamline workflows, and drive impactful improvement..."</div>
+                <div class="rec-text">
+                    "I had the opportunity to work with Nishant, and it was genuinely a great learning experience. Nishant has a strong ability to balance strategic thinking with execution, especially in areas like automation, analytics, and operational management.<br><br>
+                    What stood out most to me was his approach to leadership. He was always approachable, solution-oriented, and deeply involved in helping the team grow while ensuring business goals were met efficiently. His ability to identify bottlenecks, streamline workflows, and drive impactful improvements consistently created a positive impact across projects and team operations.<br><br>
+                    Beyond his technical and analytical expertise, Nishant brings a collaborative and supportive leadership style that makes working with him both productive and motivating. I’m confident he will continue to create significant value wherever he goes, and I would highly recommend him to any organization."
+                </div>
                 <div class="rec-author">Bhargava Bhavaraju</div>
                 <div class="rec-title">Product Reviews Associate @ G2 | Ex-Gartner</div>
             </div>
