@@ -30,7 +30,7 @@ with analytics.track():
         .summary-text { font-size: 1.15rem; line-height: 1.6; color: #8892b0; }
         .summary-text p { margin-bottom: 12px !important; }
         [data-testid="stImage"] { border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); max-width: 280px; margin: auto; border: 2px solid #172a45; }
-        .linkedin-container { margin-top: 20px; }
+        .social-container { margin-top: 20px; display: flex; gap: 15px; }
         .social-icon { width: 35px; transition: all 0.3s ease-in-out; filter: brightness(0) invert(1) drop-shadow(0px 0px 1px #64ffda); }
         .social-icon:hover { transform: translateY(-3px); filter: brightness(0) invert(1) drop-shadow(0px 0px 8px #64ffda); }
         h1, h2, h3 { color: #ccd6f6 !important; font-weight: 700; }
@@ -130,7 +130,18 @@ with analytics.track():
         st.markdown(f'<h1>Nishant Ray <span class="pronouns">(He/Him)</span></h1>', unsafe_allow_html=True)
         st.subheader("Product Team Lead | Automation Architect | Strategy & Execution")
         st.markdown("""<div class="contact-subtext">📧 raynishant09@gmail.com &nbsp;|&nbsp; 📱 +91 9481955387 &nbsp;|&nbsp; 📍 Gurugram, India</div>""", unsafe_allow_html=True)
-        st.markdown("""<div class="linkedin-container"><a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" class="social-icon"></a></div>""", unsafe_allow_html=True)
+        
+        # Social links side-by-side
+        st.markdown("""
+        <div class="social-container">
+            <a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" class="social-icon">
+            </a>
+            <a href="https://github.com/nishantray-09" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="social-icon">
+            </a>
+        </div>
+        """, unsafe_allow_html=True)
 
     st.write("---")
 
