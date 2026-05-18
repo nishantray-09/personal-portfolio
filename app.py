@@ -176,6 +176,7 @@ with analytics.track():
                 <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat&logo=microsoftpowerbi&logoColor=black" />
                 <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=flat&logo=snowflake&logoColor=white" />
             </div>
+            <div class="metric-highlight">⏱️ Impact: Saved ~30 hours/month through streamlined reporting processes</div>
         </div>
         """, unsafe_allow_html=True)
 
