@@ -40,6 +40,35 @@ with analytics.track():
         .submit-btn:hover { background-color: rgba(100, 255, 218, 0.1); box-shadow: 0 0 10px #64ffda; }
         hr { border: 0; height: 1px; background: #233554; }
         
+        /* --- CORE EXPERTISE BADGES --- */
+        .expert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .expert-badge {
+            background-color: rgba(23, 42, 69, 0.7);
+            border: 1px solid #233554;
+            color: #ccd6f6;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        .expert-badge:hover {
+            border-color: #64ffda;
+            color: #64ffda;
+            transform: translateX(3px);
+        }
+        .expert-badge span {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
         /* --- RECOMMENDATIONS & PROJECTS CARD STYLING --- */
         .rec-card, .project-card {
             background-color: #172a45;
@@ -130,9 +159,21 @@ with analytics.track():
         col_left, col_right = st.columns(2)
         with col_left:
             st.header("🎯 Core Expertise")
-            st.write("🚀 **Product Management** | 🤖 **Process Automation**")
-            st.write("📊 **Data Visualization** | 👥 **Team Leadership**")
-            st.write("📈 **Capacity Planning** | 🧠 **Competitive Intel**")
+            st.markdown("""
+            <div class="expert-grid">
+                <div class="expert-badge"><span>🤖</span> Automation</div>
+                <div class="expert-badge"><span>🧠</span> Machine Learning</div>
+                <div class="expert-badge"><span>🌐</span> Software Product Management</div>
+                <div class="expert-badge"><span>📊</span> Business Data Management</div>
+                <div class="expert-badge"><span>⚙️</span> Product Operations</div>
+                <div class="expert-badge"><span>🚀</span> Product Management</div>
+                <div class="expert-badge"><span>📈</span> Data Visualization</div>
+                <div class="expert-badge"><span>👥</span> Team Leadership</div>
+                <div class="expert-badge"><span>📅</span> Capacity Planning</div>
+                <div class="expert-badge"><span>🔍</span> Competitive Intel</div>
+            </div>
+            """, unsafe_allow_html=True)
+            
         with col_right:
             st.header("📄 Resume")
             try:
