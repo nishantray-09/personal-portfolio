@@ -146,7 +146,7 @@ with analytics.track():
         st.write("A showcase of key automation frameworks, analytical tools, and product initiatives built to drive business efficiency.")
         st.write("")
 
-        # Project Card 1
+        # Project Card 1: CRM Lead Ingestion Automation
         st.markdown("""
         <div class="project-card">
             <div class="project-title">💼 CRM Lead Ingestion Automation</div>
@@ -160,6 +160,22 @@ with analytics.track():
                 <img src="https://img.shields.io/badge/Google_Gemini-8E75FF?style=flat&logo=googlegemini&logoColor=white" />
             </div>
             <div class="metric-highlight">⏱️ Impact: Saved ~80 hours/month with 100% data accuracy</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # Project Card 2: Gen AI Dashboard
+        st.markdown("""
+        <div class="project-card">
+            <div class="project-title">📊 Gen AI Dashboard</div>
+            <div class="project-meta">Mar 2024 – Apr 2024 &nbsp;|&nbsp; Associated with Gartner</div>
+            <div class="project-desc">
+                Designed and implemented a dynamic data monitoring workspace to track evolving Generative AI data trends. 
+                By combining warehouse data processing with visualization layers, this dashboard empowers leadership teams with real-time, actionable macro-level insights while streamlining deep operational reporting processes.
+            </div>
+            <div style="margin-bottom: 15px;">
+                <img src="https://img.shields.io/badge/Power_BI-F2C811?style=flat&logo=microsoftpowerbi&logoColor=black" />
+                <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=flat&logo=snowflake&logoColor=white" />
+            </div>
         </div>
         """, unsafe_allow_html=True)
 
@@ -181,7 +197,7 @@ with analytics.track():
             </div>
             """, unsafe_allow_html=True)
             
-            # 2. Bhargava Bhavaraju (FULLY UPDATED WITH THREE PARAGRAPHS)
+            # 2. Bhargava Bhavaraju
             st.markdown("""
             <div class="rec-card">
                 <div class="rec-text">
