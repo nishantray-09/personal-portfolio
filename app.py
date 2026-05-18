@@ -64,13 +64,19 @@ with analytics.track():
         .expert-section {
             background-color: #172a45;
             border: 1px solid #233554;
-            padding: 20px;
+            padding: 22px;
             border-radius: 12px;
-            margin-bottom: 15px;
+            margin-top: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: border-color 0.3s ease;
         }
-        .expert-list { list-style-type: none; padding-left: 0; color: #8892b0; font-size: 1.05rem; }
-        .expert-list li { margin-bottom: 10px; display: flex; align-items: center; }
-        .expert-list li::before { content: "▹"; color: #64ffda; margin-right: 10px; font-weight: bold; }
+        .expert-section:hover {
+            border-color: #64ffda;
+        }
+        .expert-list { list-style-type: none; padding-left: 0; color: #8892b0; font-size: 1.05rem; margin-bottom: 0; }
+        .expert-list li { margin-bottom: 12px; display: flex; align-items: center; }
+        .expert-list li:last-child { margin-bottom: 0; }
+        .expert-list li::before { content: "▹"; color: #64ffda; margin-right: 12px; font-weight: bold; font-size: 1.1rem; }
 
         /* --- CARD GLOW MICRO-INTERACTIONS --- */
         .rec-card, .project-card {
@@ -134,7 +140,7 @@ with analytics.track():
         except: st.image("https://via.placeholder.com/280x350")
     with col2:
         st.markdown(f'<h1>Nishant Ray <span class="pronouns">(He/Him)</span></h1>', unsafe_allow_html=True)
-        st.subheader("Scaling Operations Through Intelligent Automation & Product Strategy")
+        st.subheader("Product Lead | Automation Architect | Strategy & Operations")
         st.markdown("""<div class="contact-subtext">📧 raynishant09@gmail.com &nbsp;|&nbsp; 📱 +91 9481955387 &nbsp;|&nbsp; 📍 Gurugram, India</div>""", unsafe_allow_html=True)
         
         st.markdown("""
