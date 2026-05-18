@@ -39,6 +39,40 @@ with analytics.track():
         .submit-btn { background-color: transparent; color: #64ffda; padding: 10px 20px; border: 1px solid #64ffda; border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold; transition: 0.3s; }
         .submit-btn:hover { background-color: rgba(100, 255, 218, 0.1); box-shadow: 0 0 10px #64ffda; }
         hr { border: 0; height: 1px; background: #233554; }
+        
+        /* --- RECOMMENDATIONS STYLING --- */
+        .rec-card {
+            background-color: #172a45;
+            border: 1px solid #233554;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .rec-card:hover {
+            transform: translateY(-5px);
+            border-color: #64ffda;
+        }
+        .rec-text {
+            color: #8892b0;
+            font-size: 1.02rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .rec-author {
+            color: #ccd6f6;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+        }
+        .rec-title {
+            color: #64ffda;
+            font-size: 0.85rem;
+            font-family: 'Courier New', monospace;
+            line-height: 1.3;
+        }
         </style>
         """, unsafe_allow_html=True)
 
@@ -53,36 +87,98 @@ with analytics.track():
         st.markdown("""<div class="contact-subtext">📧 raynishant09@gmail.com &nbsp;|&nbsp; 📱 +91 9481955387 &nbsp;|&nbsp; 📍 Gurugram, India</div>""", unsafe_allow_html=True)
         st.markdown("""<div class="linkedin-container"><a href="https://www.linkedin.com/in/nishant-ray-08222810a/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png" class="social-icon"></a></div>""", unsafe_allow_html=True)
 
-    # --- FULL SUMMARY RESTORED ---
     st.write("---")
-    st.header("📌 Summary")
-    st.write(f"""
-    <div class="summary-text">
-    <p>As a seasoned Product Team Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over seven years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions—empowering teams to automate processes, optimize workflows, and deliver impactful results.</p>
-    <p>My expertise spans team management, capacity planning, and forecasting, complemented by a strong foundation in competitive intelligence, product management, data analytics, and data visualization.</p>
-    <p>I am passionate about transforming complex challenges into clean, efficient code, enabling businesses to scale seamlessly and automate repetitive tasks. Driven by strategic thinking and a collaborative leadership style, I excel at aligning cross-functional teams with business objectives, ensuring projects are delivered on time and exceed expectations. Whether guiding product vision or architecting automation solutions, I am dedicated to fostering growth, innovation, and measurable success.</p>
-    </div>
-    """, unsafe_allow_html=True)
 
-    # --- TOOLS & TECHNOLOGIES ---
-    st.write("---")
-    st.header("🛠️ Tools & Technologies")
-    st.markdown("""<div style="text-align: left;"><img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=microsoftpowerbi&logoColor=black" /> <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /> <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" /></div>""", unsafe_allow_html=True)
+    # --- TABS FOR NAVIGATION ---
+    tab_about, tab_recommendations = st.tabs(["👤 About Me", "💬 LinkedIn Recommendations"])
 
-    # --- CORE EXPERTISE & RESUME ---
-    st.write("---")
-    col_left, col_right = st.columns(2)
-    with col_left:
-        st.header("🎯 Core Expertise")
-        st.write("🚀 **Product Management** | 🤖 **Process Automation**")
-        st.write("📊 **Data Visualization** | 👥 **Team Leadership**")
-        st.write("📈 **Capacity Planning** | 🧠 **Competitive Intel**")
-    with col_right:
-        st.header("📄 Resume")
-        try:
-            with open("Nishant Ray - Resume.pdf", "rb") as file:
-                st.download_button(label="📥 DOWNLOAD CV (PDF)", data=file.read(), file_name="Nishant Ray - Resume.pdf", mime="application/pdf")
-        except: st.error("Resume file not found.")
+    # ==================== TAB 1: ABOUT ME ====================
+    with tab_about:
+        # --- FULL SUMMARY RESTORED ---
+        st.header("📌 Summary")
+        st.markdown("""
+        <div class="summary-text">
+        <p>As a seasoned Product Team Lead and automation expert, I thrive at the intersection of visionary product strategy and technical execution. With over seven years of hands-on experience, I specialize in bridging the gap between innovative ideas and scalable solutions—empowering teams to automate processes, optimize workflows, and deliver impactful results.</p>
+        <p>My expertise spans team management, capacity planning, and forecasting, complemented by a strong foundation in competitive intelligence, product management, data analytics, and data visualization.</p>
+        <p>I am passionate about transforming complex challenges into clean, efficient code, enabling businesses to scale seamlessly and automate repetitive tasks. Driven by strategic thinking and a collaborative leadership style, I excel at aligning cross-functional teams with business objectives, ensuring projects are delivered on time and exceed expectations. Whether guiding product vision or architecting automation solutions, I am dedicated to fostering growth, innovation, and measurable success.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # --- TOOLS & TECHNOLOGIES ---
+        st.write("---")
+        st.header("🛠️ Tools & Technologies")
+        st.markdown("""<div style="text-align: left;"><img src="https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=microsoftpowerbi&logoColor=black" /> <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" /> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white" /> <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /> <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" /></div>""", unsafe_allow_html=True)
+
+        # --- CORE EXPERTISE & RESUME ---
+        st.write("---")
+        col_left, col_right = st.columns(2)
+        with col_left:
+            st.header("🎯 Core Expertise")
+            st.write("🚀 **Product Management** | 🤖 **Process Automation**")
+            st.write("📊 **Data Visualization** | 👥 **Team Leadership**")
+            st.write("📈 **Capacity Planning** | 🧠 **Competitive Intel**")
+        with col_right:
+            st.header("📄 Resume")
+            try:
+                with open("Nishant Ray - Resume.pdf", "rb") as file:
+                    st.download_button(label="📥 DOWNLOAD CV (PDF)", data=file.read(), file_name="Nishant Ray - Resume.pdf", mime="application/pdf")
+            except: st.error("Resume file not found.")
+
+    # ==================== TAB 2: RECOMMENDATIONS ====================
+    with tab_recommendations:
+        st.header("💬 Recommendations")
+        st.write("Testimonials from managers, colleagues, and team members received on LinkedIn.")
+        st.write("")
+
+        # Split into two columns for structured desktop viewing
+        rec_col1, rec_col2 = st.columns(2, gap="large")
+
+        with rec_col1:
+            # 1. Laxmi Narasimhan Akshay
+            st.markdown("""
+            <div class="rec-card">
+                <div class="rec-text">"Lots of people talk about self learning and up-skilling as one of their key pursuits in their career, very few walk the talk. Nishant goes above and beyond in putting it into practice, you give him a problem and structure to approach and he goes out and figures out the rest. Even if it means learning skills as intensive as SQL, Power BI, Power Apps etc. from scratch. And once he is committed, you rarely need to follow up as he would be on your case to share progress, roadblocks and potential workaround he is already trying to figure. Very rarely you get across people with such high levels of motivation and self drive. Can't recommend him enough to any potential employer."</div>
+                <div class="rec-author">Laxmi Narasimhan Akshay</div>
+                <div class="rec-title">Senior Product Leader @ Gartner | ISB Alumnus</div>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            # 2. Bhargava Bhavaraju
+            st.markdown("""
+            <div class="rec-card">
+                <div class="rec-text">"I had the opportunity to work with Nishant, and it was genuinely a great learning experience. Nishant has a strong ability to balance strategic thinking with execution, especially in areas like automation, analytics, and operational management.<br><br>What stood out most to me was his approach to leadership. He was always approachable, solution-oriented, and deeply involved in helping the team grow while ensuring business goals were met efficiently. His ability to identify bottlenecks, streamline workflows, and drive impactful improvement..."</div>
+                <div class="rec-author">Bhargava Bhavaraju</div>
+                <div class="rec-title">Product Reviews Associate @ G2 | Ex-Gartner</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            # 3. Mahima Kapoor
+            st.markdown("""
+            <div class="rec-card">
+                <div class="rec-text">"Nishant has been a star performer and the easiest colleague to work with. His exceptional communication skills and commitments towards works makes him stand out of the crowd. His honesty, mindfulness and innovative thinking are the greatest assets."</div>
+                <div class="rec-author">Mahima Kapoor</div>
+                <div class="rec-title">Consultant at Accenture | Ex-Google (Operations) | Ex-Gartner</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with rec_col2:
+            # 4. Garima Kalra
+            st.markdown("""
+            <div class="rec-card">
+                <div class="rec-text">"Nishant excels in all areas of his role especially project management, building dashboarding, and audit. He often goes and beyond to deliver high-quality results. He is known for his problem-solving abilities, and teamwork which significantly contributes to our team's success. He approaches every project with enthusiasm and dedication.<br><br>In addition to his professional skills, Nishant is a pleasure to work with. He is supportive of colleagues, communicates effectively, and fosters a collaborative and positive work environment."</div>
+                <div class="rec-author">Garima Kalra</div>
+                <div class="rec-title">Senior Manager, G2 India | Ex-Gartner | Ex-E&Y</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            # 5. Alka Gupta
+            st.markdown("""
+            <div class="rec-card">
+                <div class="rec-text">"Nishant and I worked together on multiple high impact projects in the same team. He is an amazing co-worker, extremely humble, disciplined and has a knack for learning new things continuously. His analytically driven approach has helped me explore new dimensions at work and he will be a great asset to any workplace."</div>
+                <div class="rec-author">Alka Gupta</div>
+                <div class="rec-title">Data Analytics Engineer | Ex-Amazon</div>
+            </div>
+            """, unsafe_allow_html=True)
 
     # --- CONTACT FORM ---
     st.write("---")
