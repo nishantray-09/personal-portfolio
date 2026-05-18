@@ -60,22 +60,9 @@ with analytics.track():
         .submit-btn:hover { background-color: rgba(100, 255, 218, 0.1); box-shadow: 0 0 10px #64ffda; }
         hr { border: 0; height: 1px; background: #233554; }
         
-        /* --- CORE EXPERTISE BLOCK STRUCTURE --- */
-        .expert-section {
-            background-color: #172a45;
-            border: 1px solid #233554;
-            padding: 22px;
-            border-radius: 12px;
-            margin-top: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            transition: border-color 0.3s ease;
-        }
-        .expert-section:hover {
-            border-color: #64ffda;
-        }
-        .expert-list { list-style-type: none; padding-left: 0; color: #8892b0; font-size: 1.05rem; margin-bottom: 0; }
+        /* --- CORE EXPERTISE LIST CLEANUP --- */
+        .expert-list { list-style-type: none; padding-left: 0; color: #8892b0; font-size: 1.05rem; margin-top: 5px; }
         .expert-list li { margin-bottom: 12px; display: flex; align-items: center; }
-        .expert-list li:last-child { margin-bottom: 0; }
         .expert-list li::before { content: "▹"; color: #64ffda; margin-right: 12px; font-weight: bold; font-size: 1.1rem; }
 
         /* --- CARD GLOW MICRO-INTERACTIONS --- */
@@ -195,18 +182,14 @@ with analytics.track():
             
             p1, p2 = st.columns(2)
             with p1:
-                st.markdown('<div class="expert-section">', unsafe_allow_html=True)
                 st.markdown("##### 🌐 Product Strategy")
                 st.markdown("""<ul class="expert-list"><li>Software Product Management</li><li>Product Operations</li><li>Competitive Intelligence</li><li>Team Leadership</li></ul>""", unsafe_allow_html=True)
-                st.markdown('</div>', unsafe_allow_html=True)
             with p2:
-                st.markdown('<div class="expert-section">', unsafe_allow_html=True)
                 st.markdown("##### 📊 Automation & Data")
                 st.markdown("""<ul class="expert-list"><li>Intelligent Automation</li><li>Machine Learning Models</li><li>Business Data Management</li><li>Capacity Planning & Forecasting</li></ul>""", unsafe_allow_html=True)
-                st.markdown('</div>', unsafe_allow_html=True)
             
         with col_right:
-            st.header("📄 Executive Resume")
+            st.header("📄 Resume")
             st.write("Review my formal trajectory, credential architecture, and organizational progression details.")
             st.write("")
             try:
@@ -298,7 +281,7 @@ with analytics.track():
             # 4. Garima Kalra
             st.markdown("""
             <div class="rec-card">
-                <div class="rec-text">"Nishant excels in all areas of his role especially project management, building dashboarding, and audit. He often goes and beyond to deliver high-quality results. He is known for his problem-solving abilities, and teamwork which significantly contributes to our team's success. He approaches every project with enthusiasm and dedication.<br><br>In addition to his professional skills, Nishant is a pleasure to work with. He is supportive of colleagues, communicates effectively, and fosters a collaborative and positive work environment."</div>
+                <div class="rec-text">"Nishant excels in all areas of his role especially project management, building dashboarding, and audit. He often goes and beyond to deliver high-quality results. He is known for his problem-solving abilities, and teamwork which significantly contributes to our team's success. He approaches every project with enthusiasm and dedication.<br><br>In addition to his professional skills, Nishant is a pleasure to work with. He be supportive of colleagues, communicates effectively, and fosters a collaborative and positive work environment."</div>
                 <div class="rec-author">Garima Kalra</div>
                 <div class="rec-title">Senior Manager, G2 India | Ex-Gartner | Ex-E&Y</div>
             </div>
