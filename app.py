@@ -40,8 +40,8 @@ with analytics.track():
         .submit-btn:hover { background-color: rgba(100, 255, 218, 0.1); box-shadow: 0 0 10px #64ffda; }
         hr { border: 0; height: 1px; background: #233554; }
         
-        /* --- RECOMMENDATIONS STYLING --- */
-        .rec-card {
+        /* --- RECOMMENDATIONS & PROJECTS CARD STYLING --- */
+        .rec-card, .project-card {
             background-color: #172a45;
             border: 1px solid #233554;
             border-radius: 12px;
@@ -50,28 +50,44 @@ with analytics.track():
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
-        .rec-card:hover {
+        .rec-card:hover, .project-card:hover {
             transform: translateY(-5px);
             border-color: #64ffda;
         }
-        .rec-text {
+        .rec-text, .project-desc {
             color: #8892b0;
             font-size: 1.02rem;
-            font-style: italic;
             line-height: 1.6;
             margin-bottom: 15px;
         }
-        .rec-author {
+        .rec-text { font-style: italic; }
+        .rec-author, .project-title {
             color: #ccd6f6;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             margin-bottom: 2px;
+        }
+        .project-meta {
+            color: #64ffda;
+            font-size: 0.85rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 12px;
         }
         .rec-title {
             color: #64ffda;
             font-size: 0.85rem;
             font-family: 'Courier New', monospace;
             line-height: 1.3;
+        }
+        .metric-highlight {
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+            border: 1px dashed rgba(100, 255, 218, 0.3);
         }
         </style>
         """, unsafe_allow_html=True)
@@ -90,7 +106,7 @@ with analytics.track():
     st.write("---")
 
     # --- TABS FOR NAVIGATION ---
-    tab_about, tab_recommendations = st.tabs(["👤 About Me", "💬 LinkedIn Recommendations"])
+    tab_about, tab_projects, tab_recommendations = st.tabs(["👤 About Me", "🚀 Projects", "💬 LinkedIn Recommendations"])
 
     # ==================== TAB 1: ABOUT ME ====================
     with tab_about:
@@ -124,7 +140,32 @@ with analytics.track():
                     st.download_button(label="📥 DOWNLOAD CV (PDF)", data=file.read(), file_name="Nishant Ray - Resume.pdf", mime="application/pdf")
             except: st.error("Resume file not found.")
 
-    # ==================== TAB 2: RECOMMENDATIONS ====================
+    # ==================== TAB 2: PROJECTS ====================
+    with tab_projects:
+        st.header("📂 Featured Projects")
+        st.write("A showcase of key automation frameworks, analytical tools, and product initiatives built to drive business efficiency.")
+        st.write("")
+
+        # First Project Card
+        st.markdown("""
+        <div class="project-card">
+            <div class="project-title">💼 CRM Lead Ingestion Automation</div>
+            <div class="project-meta">Mar 2026 – Apr 2026 &nbsp;|&nbsp; Associated with G2</div>
+            <div class="project-desc">
+                Integrated AI frameworks and Python architecture to build an end-to-end automated scraping engine. 
+                The solution targets inbox ecosystems to extract inbound email leads, parse unstructured data, and dynamically route parsed, high-intent lead attributes onto the centralized CRM platform.
+            </div>
+            <div style="margin-bottom: 15px;">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
+                <img src="https://img.shields.io/badge/Google_Gemini-8E75FF?style=flat&logo=googlegemini&logoColor=white" />
+            </div>
+            <div class="metric-highlight">⏱️ Impact: Saved ~80 hours/month with 100% data accuracy</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        # Space ready for the next project cards you share!
+
+    # ==================== TAB 3: RECOMMENDATIONS ====================
     with tab_recommendations:
         st.header("💬 Recommendations")
         st.write("Testimonials from managers, colleagues, and team members received on LinkedIn.")
