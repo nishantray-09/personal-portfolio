@@ -207,7 +207,7 @@ with analytics.track():
         st.markdown("""
         <div class="project-card">
             <div class="project-title">💼 CRM Lead Ingestion Automation Engine</div>
-            <div class="project-meta">Mar 2026 – Apr 2026 &nbsp;|&nbsp; Enterprise System @ G2</div>
+            <div class="project-meta">Mar 2026 – Apr 2026 &nbsp;|&nbsp; Product Lead @ G2</div>
             <div class="project-desc">
                 Integrated artificial intelligence protocols with Python runtime frameworks to structure an end-to-end extraction utility. 
                 The software hooks inbound mail distributions, systematically dissects schema-less unstructured payloads, isolates operational customer parameters, and pipelines ingestion fields onto the enterprise CRM architecture.
@@ -224,7 +224,7 @@ with analytics.track():
         st.markdown("""
         <div class="project-card">
             <div class="project-title">📊 Analytics Framework: Gen AI Corporate Dashboard</div>
-            <div class="project-meta">Mar 2024 – Apr 2024 &nbsp;|&nbsp; Business Intelligence Unit @ Gartner</div>
+            <div class="project-meta">Mar 2024 – Apr 2024 &nbsp;|&nbsp; Senior Product Speciailist @ Gartner</div>
             <div class="project-desc">
                 Architected and deployed a multi-tier pipeline optimization workspace designed to visualize fluctuating global Generative AI technology trends. 
                 The delivery involved setting warehouse telemetry aggregations beneath robust dashboarding visual control interfaces, enabling executives with proactive data discoveries while shortening data cycle times.
