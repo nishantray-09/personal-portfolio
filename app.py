@@ -49,6 +49,25 @@ with analytics.track():
         .social-icon:hover { transform: translateY(-4px); filter: brightness(0) invert(1) drop-shadow(0px 0px 10px #64ffda); }
         h1, h2, h3 { color: #ccd6f6 !important; font-weight: 700; }
         
+        /* --- STREAMLIT NATIVE TABS ULTRA-UPGRADE --- */
+        button[data-baseweb="tab"] {
+            font-size: 1.25rem !important; /* Makes titles larger and prominent */
+            font-weight: 700 !important; /* Bold font weight */
+            color: #8892b0 !important; /* Highly visible baseline state */
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease-in-out;
+            padding: 10px 20px !important;
+        }
+        button[data-baseweb="tab"]:hover {
+            color: #64ffda !important; /* Distinctive neon glow hover response */
+            transform: translateY(-2px);
+        }
+        button[aria-selected="true"] {
+            color: #64ffda !important; /* Active selection pop highlight color */
+            text-shadow: 0px 0px 12px rgba(100, 255, 218, 0.4); /* Neon visual emphasis */
+            border-bottom: 3px solid #64ffda !important;
+        }
+
         /* Custom Native Streamlit Metric Overrides for Dark Mode */
         [data-testid="stMetricValue"] { color: #64ffda !important; font-family: 'Courier New', monospace; font-weight: 700 !important; }
         [data-testid="stMetricLabel"] { color: #ccd6f6 !important; font-size: 1rem !important; }
@@ -152,7 +171,8 @@ with analytics.track():
         st.write("")
         m_col1, m_col2, m_col3, m_col4 = st.columns(4)
         with m_col1:
-            st.metric(label="🔥 Operational Efficiency", value="110+ Hours", delta="Saved Monthly")
+            # Updated Label Title Below
+            st.metric(label="🔥 Operational Efficiency via Automations", value="110+ Hours", delta="Saved Monthly")
         with m_col2:
             st.metric(label="🎯 Automation Precision", value="100%", delta="Lead Data Accuracy")
         with m_col3:
