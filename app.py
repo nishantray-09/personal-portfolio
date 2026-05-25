@@ -180,7 +180,8 @@ with analytics.track():
         st.write("")
         m_col1, m_col2, m_col3, m_col4 = st.columns(4)
         with m_col1:
-            st.metric(label="🔥 Operational Efficiency via Automations", value="110+ Hours", delta="Saved Monthly")
+            # Scaled up metric to match cumulative hours across optimizations (~42 + ~80 + ~30)
+            st.metric(label="🔥 Operational Efficiency via Automations", value="~150+ Hours", delta="Saved Monthly")
         with m_col2:
             st.metric(label="🎯 Automation Precision", value="100%", delta="Lead Data Accuracy")
         with m_col3:
@@ -235,7 +236,7 @@ with analytics.track():
         st.markdown("""
         <div class="project-card">
             <div class="project-title">⚙️ Internal UI Automation: Smart Link Ingestion Engine</div>
-            <div class="project-meta">May 2026 &nbsp;|&nbsp; Product Operations Lead</div>
+            <div class="project-meta">May 2026 &nbsp;|&nbsp; Product Lead / Trust & Safety @ G2</div>
             <div class="project-desc">
                 Designed and engineered an automated hyperlinking micro-utility embedded within the internal review interface. 
                 Previously, analysts manually navigated and cross-referenced datasets to append validation hooks—consuming an average of 2.5 minutes per file. 
@@ -246,7 +247,7 @@ with analytics.track():
                 <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white" />
                 <img src="https://img.shields.io/badge/Automation-Success?style=flat&color=64ffda" />
             </div>
-            <div class="metric-highlight">📊 Metrics: Trimmed Baseline SLA by 20% (Saves ~30 Seconds/Review) | Conserves ~42 Engineering Hours/Month across 5K scale tasks</div>
+            <div class="metric-highlight">📊 Metrics: Trimmed Baseline SLA by 20% (Saves ~30 Seconds/Review) | Conserves ~42 Operational Hours/Month</div>
         </div>
         """, unsafe_allow_html=True)
         
