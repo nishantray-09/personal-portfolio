@@ -51,20 +51,20 @@ with analytics.track():
         
         /* --- STREAMLIT NATIVE TABS ULTRA-UPGRADE --- */
         button[data-baseweb="tab"] {
-            font-size: 1.25rem !important; /* Makes titles larger and prominent */
-            font-weight: 700 !important; /* Bold font weight */
-            color: #8892b0 !important; /* Highly visible baseline state */
+            font-size: 1.25rem !important; 
+            font-weight: 700 !important; 
+            color: #8892b0 !important; 
             letter-spacing: 0.5px;
             transition: all 0.3s ease-in-out;
             padding: 10px 20px !important;
         }
         button[data-baseweb="tab"]:hover {
-            color: #64ffda !important; /* Distinctive neon glow hover response */
+            color: #64ffda !important; 
             transform: translateY(-2px);
         }
         button[aria-selected="true"] {
-            color: #64ffda !important; /* Active selection pop highlight color */
-            text-shadow: 0px 0px 12px rgba(100, 255, 218, 0.4); /* Neon visual emphasis */
+            color: #64ffda !important; 
+            text-shadow: 0px 0px 12px rgba(100, 255, 218, 0.4); 
             border-bottom: 3px solid #64ffda !important;
         }
 
@@ -135,6 +135,15 @@ with analytics.track():
             border: 1px dashed rgba(100, 255, 218, 0.3);
             font-family: 'Courier New', monospace;
         }
+        
+        /* Smooth sizing layout box for custom local video wraps */
+        .video-wrapper {
+            max-width: 800px;
+            margin: 15px 0 35px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #233554;
+        }
         </style>
         """, unsafe_allow_html=True)
 
@@ -163,7 +172,7 @@ with analytics.track():
     st.write("---")
 
     # --- TABS FOR NAVIGATION ---
-    tab_about, tab_projects, tab_recommendations = st.tabs(["👤 Executive Summary", "🚀 Impact Case Studies", "💬 Professional Testimonials"])
+    tab_about, tab_projects, tab_recommendations = st.tabs(["👤 Executive Summary", "🚀 Featured Projects", "💬 Professional Testimonials"])
 
     # ==================== TAB 1: EXECUTIVE SUMMARY ====================
     with tab_about:
@@ -171,7 +180,6 @@ with analytics.track():
         st.write("")
         m_col1, m_col2, m_col3, m_col4 = st.columns(4)
         with m_col1:
-            # Updated Label Title Below
             st.metric(label="🔥 Operational Efficiency via Automations", value="110+ Hours", delta="Saved Monthly")
         with m_col2:
             st.metric(label="🎯 Automation Precision", value="100%", delta="Lead Data Accuracy")
@@ -217,13 +225,37 @@ with analytics.track():
                     st.download_button(label="📥 DOWNLOAD CV (PDF ARCHIVE)", data=file.read(), file_name="Nishant Ray - Resume.pdf", mime="application/pdf")
             except: st.error("Resume document matrix file not discovered locally.")
 
-    # ==================== TAB 2: IMPACT CASE STUDIES ====================
+    # ==================== TAB 2: FEATURED PROJECTS ====================
     with tab_projects:
         st.header("📂 Strategic Initiatives & Systems Architecture")
         st.write("A deep dive into architectural frameworks engineered to eliminate overhead and drive programmatic data clarity.")
         st.write("")
 
-        # Case Study 1
+        # --- PROJECT 1: INTERNAL UI UTILITY AUTOMATION ---
+        st.markdown("""
+        <div class="project-card">
+            <div class="project-title">⚙️ Internal UI Automation: Smart Link Ingestion Engine</div>
+            <div class="project-meta">May 2026 &nbsp;|&nbsp; Product Operations Lead</div>
+            <div class="project-desc">
+                Designed and engineered an automated hyperlinking micro-utility embedded within the internal review interface. 
+                Previously, analysts manually navigated and cross-referenced datasets to append validation hooks—consuming an average of 2.5 minutes per file. 
+                This automation programmatically binds targeted contextual indicators directly during the staging cycle, removing human overhead entirely from the linkage routine.
+            </div>
+            <div style="margin-bottom: 15px;">
+                <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" />
+                <img src="https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white" />
+                <img src="https://img.shields.io/badge/Automation-Success?style=flat&color=64ffda" />
+            </div>
+            <div class="metric-highlight">📊 Metrics: Trimmed Baseline SLA by 20% (Saves ~30 Seconds/Review) | Conserves ~42 Engineering Hours/Month across 5K scale tasks</div>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # --- VIDEO WALKTHROUGH FOR PROJECT 1 ---
+        st.write("🎬 **System Walkthrough Demonstration:**")
+        st.video("Coding - Auto Link Ingestion May 2026 (Nishant).mp4") 
+        st.write("---")
+
+        # Project 2 (CRM Lead Engine)
         st.markdown("""
         <div class="project-card">
             <div class="project-title">💼 CRM Lead Ingestion Automation Engine</div>
@@ -240,11 +272,11 @@ with analytics.track():
         </div>
         """, unsafe_allow_html=True)
 
-        # Case Study 2
+        # Project 3 (Gen AI Corporate Dashboard)
         st.markdown("""
         <div class="project-card">
             <div class="project-title">📊 Analytics Framework: Gen AI Corporate Dashboard</div>
-            <div class="project-meta">Mar 2024 – Apr 2024 &nbsp;|&nbsp; Senior Product Speciailist @ Gartner</div>
+            <div class="project-meta">Mar 2024 – Apr 2024 &nbsp;|&nbsp; Senior Product Specialist @ Gartner</div>
             <div class="project-desc">
                 Architected and deployed a multi-tier pipeline optimization workspace designed to visualize fluctuating global Generative AI technology trends. 
                 The delivery involved setting warehouse telemetry aggregations beneath robust dashboarding visual control interfaces, enabling executives with proactive data discoveries while shortening data cycle times.
