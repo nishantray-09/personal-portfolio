@@ -180,7 +180,6 @@ with analytics.track():
         st.write("")
         m_col1, m_col2, m_col3, m_col4 = st.columns(4)
         with m_col1:
-            # Scaled up metric to match cumulative hours across optimizations (~42 + ~80 + ~30)
             st.metric(label="🔥 Operational Efficiency via Automations", value="~150+ Hours", delta="Saved Monthly")
         with m_col2:
             st.metric(label="🎯 Automation Precision", value="100%", delta="Lead Data Accuracy")
@@ -351,7 +350,7 @@ with analytics.track():
 
     # --- CONTACT FORM ---
     st.write("---")
-    st.header("📫 Connection Portal")
+    st.header("Please feel free to reach out!")
     my_website_url = "https://nishant-portfolio.streamlit.app" 
     contact_form = f"""<div class="contact-form-container"><form action="https://formsubmit.co/raynishant09@gmail.com" method="POST"><input type="hidden" name="_next" value="{my_website_url}/?sent=true"><input type="hidden" name="_subject" value="New Portfolio Inquiry"><input type="hidden" name="_captcha" value="false"><input type="text" name="name" placeholder="Name" required><input type="email" name="email" placeholder="Email" required><textarea name="message" placeholder="Message" required style="height: 80px;"></textarea><button type="submit" class="submit-btn">Send Message</button></form></div>"""
     st.markdown(contact_form, unsafe_allow_html=True)
