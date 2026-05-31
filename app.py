@@ -1,6 +1,3 @@
-Here is your updated Streamlit portfolio code. The three recommendations from the images (**Pragya Pugaliya**, **Riks Chaudhary**, and **Nehil Gupta**) have been properly formatted as HTML cards and distributed across the two columns to maintain a balanced, two-column layout grid.
-
-```python
 import streamlit as st
 import streamlit_analytics2 as analytics 
 
@@ -388,5 +385,3 @@ with analytics.track():
     st.write("---")
     st.caption("© 2026 Nishant Ray | Engineered with Python & Streamlit Core")
     st.markdown('</div>', unsafe_allow_html=True)
-
-```
