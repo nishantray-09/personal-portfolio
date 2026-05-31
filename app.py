@@ -1,3 +1,6 @@
+Here is your updated Streamlit portfolio code. The three recommendations from the images (**Pragya Pugaliya**, **Riks Chaudhary**, and **Nehil Gupta**) have been properly formatted as HTML cards and distributed across the two columns to maintain a balanced, two-column layout grid.
+
+```python
 import streamlit as st
 import streamlit_analytics2 as analytics 
 
@@ -329,8 +332,17 @@ with analytics.track():
             </div>
             """, unsafe_allow_html=True)
 
+            # 4. Pragya Pugaliya (ADDED FROM IMAGE)
+            st.markdown("""
+            <div class="rec-card">
+                <div class="rec-text">"I’ve had the pleasure of working closely with Nishant on multiple projects, and he’s been an incredible mentor and support throughout my journey. Nishant is approachable, kind, and always willing to help—qualities that made it easy for me to reach out whenever I needed guidance. His sharp analytical skills and focus on working smart have inspired everyone around him to manage tasks more effectively. I’m grateful for his mentorship and highly recommend Nishant to anyone looking for a talented and supportive team member."</div>
+                <div class="rec-author">Pragya Pugaliya</div>
+                <div class="rec-title">Strategy & Analytics Analyst | AI-Enabled Workflows | Ex-Gartner & G2</div>
+            </div>
+            """, unsafe_allow_html=True)
+
         with rec_col2:
-            # 4. Garima Kalra
+            # 5. Garima Kalra
             st.markdown("""
             <div class="rec-card">
                 <div class="rec-text">"Nishant excels in all areas of his role especially project management, building dashboarding, and audit. He often goes and beyond to deliver high-quality results. He is known for his problem-solving abilities, and teamwork which significantly contributes to our team's success. He approaches every project with enthusiasm and dedication.<br><br>In addition to his professional skills, Nishant is a pleasure to work with. He be supportive of colleagues, communicates effectively, and fosters a collaborative and positive work environment."</div>
@@ -339,12 +351,30 @@ with analytics.track():
             </div>
             """, unsafe_allow_html=True)
 
-            # 5. Alka Gupta
+            # 6. Alka Gupta
             st.markdown("""
             <div class="rec-card">
                 <div class="rec-text">"Nishant and I worked together on multiple high impact projects in the same team. He is an amazing co-worker, extremely humble, disciplined and has a knack for learning new things continuously. His analytically driven approach has helped me explore new dimensions at work and he will be a great asset to any workplace."</div>
                 <div class="rec-author">Alka Gupta</div>
                 <div class="rec-title">Data Analytics Engineer | Ex-Amazon</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            # 7. Riks Chaudhary (ADDED FROM IMAGE)
+            st.markdown("""
+            <div class="rec-card">
+                <div class="rec-text">"I have had the opportunity to work closely with Nishant for over two years, reporting directly to him across multiple projects and responsibilities. During this time, I have consistently been impressed by his ability to combine strategic thinking with strong execution.<br><br>Nishant has a remarkable talent for identifying opportunities to improve processes, streamline workflows, and drive operational efficiency. His problem-solving approach is thoughtful, data-driven, and always focused on creating long-term impact. Beyond his technical and analytical strengths, he is a supportive leader who empowers his team, provides clear direction, and encourages ownership.<br><br>One of the qualities I admire most about Nishant is his ability to remain composed and solution-oriented, even in fast-paced and challenging situations. Working with him has been a valuable learning experience, and I am grateful for the guidance, mentorship, and trust he has provided throughout our collaboration.<br><br>I would highly recommend Nishant to any organization looking for a leader who brings together operational excellence, innovation, and strong people management skills."</div>
+                <div class="rec-author">Riks Chaudhary</div>
+                <div class="rec-title">Product Catalog Specialist at G2 | AI Strategy & Transformation Specialist</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+            # 8. Nehil Gupta (ADDED FROM IMAGE)
+            st.markdown("""
+            <div class="rec-card">
+                <div class="rec-text">"I had the privilege of learning under Nishant Ray, and he has been an incredible mentor throughout the journey. His guidance in data analysis and Power BI dashboarding has helped me strengthen both my technical and analytical skills significantly.<br><br>Beyond technical expertise, Nishant’s communication, professionalism, and attention to detail truly stand out. He is always approachable, supportive, and open to exploring new ideas and technologies, which creates a great learning environment for everyone around him.<br><br>I’m grateful for everything I’ve learned from him and would highly recommend him as a mentor and professional."</div>
+                <div class="rec-author">Nehil Gupta</div>
+                <div class="rec-title">Senior Specialist at G2 | Ex-Gartner</div>
             </div>
             """, unsafe_allow_html=True)
 
@@ -358,3 +388,5 @@ with analytics.track():
     st.write("---")
     st.caption("© 2026 Nishant Ray | Engineered with Python & Streamlit Core")
     st.markdown('</div>', unsafe_allow_html=True)
+
+```
